@@ -17,6 +17,7 @@
 
   :root{
     --sand:#dcd7d4;
+    --papel:#e2d8c6;   /* Fedrigoni Tintoretto Sésamo (aproximação de ecrã): a capa e o interior são o mesmo papel */
     --ash:#77746f;
     --charcoal:#323333;
     --white:#ffffff;
@@ -74,11 +75,11 @@
   .page-inner{ position:absolute; inset:0; }
 
   /* Exterior Sand com bordo Charcoal (Opção 02 — Sand + Grafite) */
-  .page.sand .page-inner{ background:var(--sand); }
+  .page.sand .page-inner{ background:var(--papel); }
   /* bordo charcoal (#3d3733, cor do original) de 1,9 mm nos lados exteriores do díptico (como na arte final): a capa não o tem do lado da dobra (esquerda), a contracapa também não (direita) */
   #p1 .page-inner{ box-shadow:inset 0 calc(var(--mm) * 1.9) 0 0 #3d3733, inset calc(var(--mm) * -1.9) 0 0 0 #3d3733, inset 0 calc(var(--mm) * -1.9) 0 0 #3d3733; }
   #p4 .page-inner{ box-shadow:inset 0 calc(var(--mm) * 1.9) 0 0 #3d3733, inset calc(var(--mm) * 1.9) 0 0 0 #3d3733, inset 0 calc(var(--mm) * -1.9) 0 0 #3d3733; }
-  .page.white .page-inner{ background:var(--white); }
+  .page.white .page-inner{ background:var(--papel); }
 
   /* Blocos posicionados em mm a partir do topo da página A5 */
   .at{ position:absolute; left:0; right:0; }
@@ -225,7 +226,7 @@
             <p><a href="tel:+351220128700">+351 220 128 700</a></p>
             <p><a href="mailto:reservations@ramonfreixaporto.com">reservations@ramonfreixaporto.com</a></p>
             <a class="ig" href="https://www.instagram.com/ramonfreixaporto/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><rect x="6" y="6" width="12" height="12" rx="3.6" fill="none" stroke="#dcd7d4" stroke-width="1.6"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#dcd7d4" stroke-width="1.6"/><circle cx="15.6" cy="8.4" r=".9" fill="#dcd7d4"/></svg>ramonfreixaporto
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M0 12a12 12 0 1 0 24 0a12 12 0 1 0 -24 0ZM9.6 5.2H14.4A4.4 4.4 0 0 1 18.8 9.6V14.4A4.4 4.4 0 0 1 14.4 18.8H9.6A4.4 4.4 0 0 1 5.2 14.4V9.6A4.4 4.4 0 0 1 9.6 5.2ZM9.6 6.8H14.4A2.8 2.8 0 0 1 17.2 9.6V14.4A2.8 2.8 0 0 1 14.4 17.2H9.6A2.8 2.8 0 0 1 6.8 14.4V9.6A2.8 2.8 0 0 1 9.6 6.8ZM8.3 12a3.7 3.7 0 1 0 7.4 0a3.7 3.7 0 1 0 -7.4 0ZM9.9 12a2.1 2.1 0 1 0 4.2 0a2.1 2.1 0 1 0 -4.2 0ZM14.7 8.4a0.9 0.9 0 1 0 1.8 0a0.9 0.9 0 1 0 -1.8 0Z"/></svg>ramonfreixaporto
             </a>
           </div>
           <div class="at debrais"><img src="assets/img/debrais-marca-black.png" alt="Debrais Boutique Hotel"></div>
