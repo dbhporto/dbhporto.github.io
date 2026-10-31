@@ -74,10 +74,10 @@
   .page-inner{ position:absolute; inset:0; }
 
   /* Exterior Sand com bordo Charcoal (Opção 02 — Sand + Grafite) */
-  .page.sand .page-inner{
-    background:var(--sand);
-    box-shadow:inset 0 0 0 calc(var(--mm) * .6) var(--charcoal);
-  }
+  .page.sand .page-inner{ background:var(--sand); }
+  /* bordo charcoal de 2 mm nos lados exteriores do díptico (como na arte final): a capa não o tem do lado da dobra (esquerda), a contracapa também não (direita) */
+  #p1 .page-inner{ box-shadow:inset 0 calc(var(--mm) * 2) 0 0 var(--charcoal), inset calc(var(--mm) * -2) 0 0 0 var(--charcoal), inset 0 calc(var(--mm) * -2) 0 0 var(--charcoal); }
+  #p4 .page-inner{ box-shadow:inset 0 calc(var(--mm) * 2) 0 0 var(--charcoal), inset calc(var(--mm) * 2) 0 0 0 var(--charcoal), inset 0 calc(var(--mm) * -2) 0 0 var(--charcoal); }
   .page.white .page-inner{ background:var(--white); }
 
   /* Blocos posicionados em mm a partir do topo da página A5 */
