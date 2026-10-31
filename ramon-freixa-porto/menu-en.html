@@ -94,12 +94,15 @@
   }
 
   /* ---------- Menus de degustação (página esquerda do interior) ---------- */
-  .menus{ text-align:center; top:calc(var(--mm) * 54); }   /* centro ótico: um pouco acima do meio da página */
+  .menus{ text-align:center; top:calc(var(--mm) * 48.5); }   /* centro ótico: um pouco acima do meio da página */
   .menus p{ font-size:calc(var(--mm) * 4.1); line-height:calc(var(--mm) * 5.4); font-weight:300; }
   .menus .eyebrow{ font-weight:500; letter-spacing:.02em; text-transform:uppercase; font-size:calc(var(--mm) * 4.6); }
   .menus .menu-name{ font-weight:500; font-size:calc(var(--mm) * 4.05); margin-top:calc(var(--mm) * 10); }
   .menus .menu-name.second{ margin-top:calc(var(--mm) * 11); }   /* espaço entre os dois menus */
   .menus .pairing{ margin-top:calc(var(--mm) * 2.5); }          /* harmonizações junto do seu menu */
+  /* título das harmonizações: pequeno, espaçado e em cinzento, para não competir com o nome do menu */
+  .menus .pairing-title{ margin-top:calc(var(--mm) * 4); font-size:calc(var(--mm) * 2.85); line-height:calc(var(--mm) * 4); font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:var(--ash); }
+  .menus .pairing-title + .pairing{ margin-top:calc(var(--mm) * 1); }
   .legal{ text-align:center; top:calc(var(--mm) * 192.4); font-size:calc(var(--mm) * 3); line-height:calc(var(--mm) * 4); font-weight:300; }
 
   /* ---------- Texto (página direita do interior) ---------- */
@@ -200,10 +203,12 @@
             <p class="eyebrow">Tasting Menus</p>
             <p class="menu-name">Origin Between Two Seas</p>
             <p>135 €</p>
+            <p class="pairing-title">Pairings</p>
             <p class="pairing">Origin Pairing · 90 €</p>
             <p>Premium Origin Pairing · 130 €</p>
             <p class="menu-name second">Discovery Between Two Seas</p>
             <p>175 €</p>
+            <p class="pairing-title">Pairings</p>
             <p class="pairing">Discovery Pairing · 110 €</p>
             <p>Premium Discovery Pairing · 160 €</p>
           </div>
