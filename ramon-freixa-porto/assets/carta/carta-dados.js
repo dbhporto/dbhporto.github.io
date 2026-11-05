@@ -64,7 +64,7 @@ NV · NIEPOORT DRY WHITE | 7 | Castas Tradicionais
 2013 · VÉRTICE PINOT NOIR | 114 | Cima Corgo · Pinot Noir
 NV · TITAN OF DOURO EXTRA BRUTO ROSÉ | 69 | Cima Corgo · Mourisco
 ## Távora-Varosa
-2016 · MURGANHEIRA VINTAGE | 67 | Pinot Noir
+2016 · MURGANHEIRA VINTAGE | 67 | Tarouca · Pinot Noir
 2011 · HEHN GRAND CUVÉE | 114 | Armamar · Cerceal, Malvasia Fina
 ## Bairrada
 2022 · POÇO DO LOBO BLANC DE NOIRS | 33 | Cantanhede · Baga
