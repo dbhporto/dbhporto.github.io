@@ -14,6 +14,7 @@
   @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Italic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
   @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Medium.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
   @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Semibold.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+  @font-face{ font-family:'Rastefani'; src:url('assets/fonts/Rastefani.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
 
   :root{
     --sand:#dcd7d4;
@@ -98,7 +99,10 @@
   .menus{ text-align:center; top:calc(var(--mm) * 48.5); }   /* centro ótico: um pouco acima do meio da página */
   .menus p{ font-size:calc(var(--mm) * 4.1); line-height:calc(var(--mm) * 5.4); font-weight:300; }
   .menus .eyebrow{ font-weight:500; letter-spacing:.02em; text-transform:uppercase; font-size:calc(var(--mm) * 4.6); }
-  .menus .menu-name{ font-weight:500; font-size:calc(var(--mm) * 4.05); margin-top:calc(var(--mm) * 10); }
+  /* nome do menu e o seu preco em Rastefani, como na arte final da Lemon Zest (06/11): o nome ~1,9x a largura de uma harmonizacao */
+  .menus .menu-name{ font-family:'Rastefani', serif; font-weight:400; letter-spacing:0; font-feature-settings:'liga' 0; font-size:calc(var(--mm) * 6.4); line-height:calc(var(--mm) * 7.2); margin-top:calc(var(--mm) * 10); }
+  .menus .menu-name .lig{ font-feature-settings:'liga' 1; }   /* so o "ar" de Mares, como na arte final; sem o "ta" de Descoberta nem o "ub" de Descubrimiento */
+  .menus .menu-name + p{ font-family:'Rastefani', serif; font-weight:400; letter-spacing:0; font-size:calc(var(--mm) * 4.8); line-height:calc(var(--mm) * 6); }
   .menus .menu-name.second{ margin-top:calc(var(--mm) * 11); }   /* espaço entre os dois menus */
   .menus .pairing{ margin-top:calc(var(--mm) * 2.5); }          /* harmonizações junto do seu menu */
   /* título das harmonizações: pequeno, espaçado e em cinzento, para não competir com o nome do menu */
@@ -202,12 +206,12 @@
         <div class="page-inner">
           <div class="at menus">
             <p class="eyebrow">Menús de Degustación</p>
-            <p class="menu-name">Origen entre Dos Mares</p>
+            <p class="menu-name">Origen entre Dos <span class="lig">Mares</span></p>
             <p>135 €</p>
             <p class="pairing-title">Armonías</p>
             <p class="pairing">Armonía Origen · 90 €</p>
             <p>Armonía Origen Premium · 130 €</p>
-            <p class="menu-name second">Descubrimiento entre Dos Mares</p>
+            <p class="menu-name second">Descubrimiento entre Dos <span class="lig">Mares</span></p>
             <p>175 €</p>
             <p class="pairing-title">Armonías</p>
             <p class="pairing">Armonía Descubrimiento · 115 €</p>
