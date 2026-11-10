@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../">
+<title>Minuta — menu personalizado Ramón Freixa Porto</title>
+<!-- Menu personalizado no formato da "01 Minuta gastronómica" (dossier Lemon Zest):
+     A4 ao baixo 297 × 210 mm, dobrado ao meio (A5), Conqueror verjurado branco 120 g, impressão 1/0, como na ficha do dossier.
+     - ARTE FINAL (?lado=frente): para a gráfica, só uma face — exterior (contracapa com contactos | capa com o símbolo).
+       Com 3 mm de sangria e marcas de corte e de dobra.
+     - VERSO (por omissão): impresso no restaurante, por cada mesa — harmonização à esquerda, menu à direita (com a mensagem final por baixo), símbolos rf nos cantos.
+       Há também um Word com a mesma formatação (Minuta_interior_XX, gerado por gerar-word.ps1).
+       Preenche-se no painel lateral e imprime-se em A4 horizontal a 100 %, sem margens. ?modelo=1 mostra só os campos-modelo (para o PDF).
+     Medidas tiradas da minuta original (1 unidade = 1 mm real). -->
+<style id="base">
+  @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Light.woff2') format('woff2'); font-weight:300; font-style:normal; }
+  @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-LightItalic.woff2') format('woff2'); font-weight:300; font-style:italic; }
+  @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Regular.woff2') format('woff2'); font-weight:400; font-style:normal; }
+  @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Italic.woff2') format('woff2'); font-weight:400; font-style:italic; }
+  @font-face{ font-family:'Bevellier'; src:url('assets/fonts/Bevellier-Medium.woff2') format('woff2'); font-weight:500; font-style:normal; }
+
+  :root{ --tinta:#323333; --cinza:#8f8f8f; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#8f8c89; font-family:'Bevellier', sans-serif; color:var(--tinta); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @media print{ body{ background:none; } .sheet{ margin:0 !important; box-shadow:none !important; } .painel{ display:none !important; } }
+
+  .sheet{ position:relative; background:#fff; overflow:hidden; margin:10mm auto; box-shadow:0 2mm 8mm rgba(0,0,0,.25); break-after:page; page-break-after:always; }
+  .abs{ position:absolute; }
+  .c{ text-align:center; transform:translateX(-50%); white-space:nowrap; }
+
+  /* ---------- FRENTE (gráfica) ---------- */
+  .frente{ width:319mm; height:232mm; }                 /* 297 × 210 + 3 mm de sangria + 8 mm para marcas, em cada lado */
+  .frente .corte{ position:absolute; left:11mm; top:11mm; width:297mm; height:210mm; }
+  /* capa: o mesmo logótipo e a mesma proporção da capa do díptico (desenho de 77,25 mm, centro ótico ligeiramente acima do meio).
+     Logótipos em vetor (SVG extraído da arte final da Lemon Zest, camada Estampagem), não em imagem. */
+  .frente .marca{ left:222.75mm; top:103.2mm; width:77.25mm; transform:translate(-50%,-50%); }
+  .frente .contactos{ left:74.25mm; top:166.7mm; font-weight:300; font-size:2.3mm; line-height:3.45mm; letter-spacing:.02em; }
+  .frente .contactos img{ display:block; width:33.4mm; margin:0 auto 3.6mm; }
+  .frente .contactos p{ margin:0; }
+  .mk{ position:absolute; background:#000; }
+  .info{ position:absolute; left:22mm; bottom:2.2mm; font:300 2.4mm 'Bevellier', sans-serif; letter-spacing:.04em; color:#000; white-space:nowrap; }
+
+  /* ---------- VERSO (restaurante) ---------- */
+  .verso{ width:297mm; height:210mm; }
+  /* símbolos dos cantos enquadrados como na minuta do dossier: círculo de 4,7 mm (= altura do FR original), centros a 15,6 × 8,0 e 281,2 × 202,7 mm */
+  .canto{ width:4.7mm; transform:translate(-50%,-50%); }
+  .verso .col{ top:0; width:130mm; height:210mm; transform:translateX(-50%); text-align:center; }
+  .verso .col.esq{ left:74.25mm; } .verso .col.dir{ left:222.75mm; }
+  .verso .fit{ position:absolute; left:0; right:0; top:31mm; transform-origin:50% 0; }
+  .verso h2{ margin:0; font-weight:500; font-size:3mm; line-height:4mm; letter-spacing:.08em; text-transform:uppercase; }
+  .verso .data{ margin-top:1.2mm; font-weight:300; font-size:2.4mm; letter-spacing:.04em; color:var(--cinza); }
+  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.1mm; line-height:6.35mm; }
+  .verso .pratos .gap{ height:12.7mm; }                 /* linha em branco = separação de momentos, como na minuta */
+  .verso .pratos .momento{ font-size:2.4mm; letter-spacing:.2em; text-transform:uppercase; color:var(--cinza); }   /* linha começada por # = título do momento */
+  .verso .pratos .gap:has(+ .momento){ height:6.35mm; }   /* com título, basta meia separação */
+  .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
+  .verso .vinhos{ margin-top:13mm; font-weight:400; font-size:3.1mm; line-height:9.9mm; }
+  .verso .vinhos .do{ font-weight:300; font-size:2.55mm; color:var(--cinza); }
+  .verso .fecho{ position:absolute; left:0; right:0; top:186mm; font-weight:300; font-style:italic; font-size:2.75mm; line-height:4.6mm; }
+  .vazio{ color:var(--cinza); }
+  @media print{ body.com-painel .vazio{ display:none; } }   /* os campos por preencher ([Data], [Nome do menu]...) só aparecem no ecrã, nunca na impressão */
+
+  /* painel de preenchimento (só no ecrã) */
+  .painel{ position:fixed; left:0; top:0; bottom:0; width:330px; overflow:auto; background:#f4f1ed; padding:16px 18px 24px; font:14px/1.35 system-ui, sans-serif; color:#222; box-shadow:2px 0 10px rgba(0,0,0,.2); z-index:5; }
+  .painel h1{ font:600 16px system-ui; margin:0 0 4px; }
+  .painel .ajuda{ font-size:12px; color:#666; margin:0 0 12px; }
+  .painel label{ display:block; font-weight:600; font-size:12px; margin:12px 0 4px; }
+  .painel label small{ font-weight:400; color:#777; }
+  .painel input, .painel textarea, .painel select{ width:100%; font:13px/1.35 system-ui; padding:6px 8px; border:1px solid #c9c3bb; border-radius:4px; background:#fff; }
+  .painel textarea{ resize:vertical; }
+  .painel .bts{ display:flex; gap:8px; margin-top:16px; }
+  .painel button{ flex:1; font:600 14px system-ui; padding:10px; border:0; border-radius:4px; cursor:pointer; background:#323333; color:#fff; }
+  .painel button.sec{ background:#d9d3cb; color:#222; }
+  body.com-painel .sheet{ margin-left:calc(330px + max(10mm, (100vw - 330px - 297mm)/2)); }
+</style>
+</head>
+<body>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var LADO = (q.get('lado') || 'verso').toLowerCase();
+  var MODELO = q.get('modelo') === '1';
+  var st = document.getElementById('base');
+  function el(tag, cls, parent, txt){ var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; if (parent) parent.appendChild(e); return e; }
+  function pos(e, x, y){ e.style.left = x + 'mm'; e.style.top = y + 'mm'; return e; }
+
+  if (LADO === 'frente') {
+    // Arte final 1/0 (ficha do dossier): só o exterior (contracapa | capa). O interior imprime-se todo no restaurante.
+    st.textContent += '@page{ size:319mm 232mm; margin:0; }';
+    function folha(nome, nota){
+      var sh = el('div', 'sheet frente', document.body);
+      var cut = el('div', 'corte', sh);
+      // marcas de corte (fora da sangria) e de dobra ao centro
+      var s = 11, W = 297, H = 210, len = 5, gap = 3.2, t = 0.25;
+      function line(x, y, w, h){ var d = el('div', 'mk', sh); d.style.cssText = 'left:'+x+'mm;top:'+y+'mm;width:'+w+'mm;height:'+h+'mm'; }
+      [[s, s], [s + W, s], [s, s + H], [s + W, s + H]].forEach(function(c){
+        var x = c[0], y = c[1], left = x === s, top = y === s;
+        line(left ? x - gap - len : x + gap, y - t/2, len, t);
+        line(x - t/2, top ? y - gap - len : y + gap, t, len);
+      });
+      var cx = s + W / 2;
+      [0, 1.6, 3.2].forEach(function(o){ line(cx - t/2, s - gap - len + o, t, 1); line(cx - t/2, s + H + gap + o, t, 1); });
+      el('div', 'info', sh, 'Ramón Freixa Porto · Minuta (menu personalizado) · ' + nome + ' · A4 297 × 210 mm, dobra ao centro (A5) · sangria 3 mm');
+      el('div', 'info', sh, nota).style.cssText = 'left:auto;right:22mm';
+      return cut;
+    }
+    var ext = folha('EXTERIOR', 'Impressão 1/0 tinta · Conqueror verjurado branco 120 g · o interior imprime-se no restaurante');
+    var marca = el('img', 'abs marca', ext); marca.src = 'assets/img/rfp-marca-charcoal.svg'; marca.alt = 'Ramón Freixa Porto';
+    var ct = pos(el('div', 'abs c contactos', ext), 74.25, 166.7);
+    var logo = el('img', '', ct); logo.src = 'assets/img/rfp-logo-charcoal.svg'; logo.alt = 'Ramón Freixa Porto';
+    ['Avenida Boavista, 954', 'Porto', '+351 220 128 700', 'reservations@ramonfreixaporto.com', 'www.debrais-hotels.com', '@ramonfreixaporto']
+      .forEach(function(t){ el('p', '', ct, t); });
+    document.fonts.ready.then(function(){ document.body.dataset.ready = '1'; });
+    return;
+  }
+
+  // ---------- VERSO ----------
+  st.textContent += '@page{ size:297mm 210mm; margin:0; }';
+  var TXT = {
+    pt: { harm:'Harmonização', fecho:'Foi um prazer cozinhar para si.\nObrigado por partilhar este momento connosco.' },
+    en: { harm:'Wine pairing', fecho:'It has been a pleasure to cook for you.\nThank you for sharing this moment with us.' },
+    es: { harm:'Maridaje', fecho:'Ha sido un placer cocinar para usted.\nGracias por compartir este momento con nosotros.' }
+  };
+  // menus para pré-preencher (pratos como em menu-comida/menu-a5.html; linha em branco separa momentos)
+  var PRESETS = {
+    origem: {
+      pt: { menu:'Origem entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia\nCozido à portuguesa\nHomenagem ao Minho\nHorta e ria\nSantola de Matosinhos\n\n# A herança\nOs pães do pai de Ramón\n\n# Menu\nOstra e castanha\nBosque da Praia de Mira\nBacalhau Pinto Duarte\nou\nBorracho de Cabeção e foie gras\n\n# Momento doce\nChocolate e medronho\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nChoux de chocolate\nSeleção de bombons e chocolates de origem' },
+      en: { menu:'Origin Between Two Seas', pratos:'# To begin\nAlgarve-style carrot\nPortuguese cozido\nA tribute to the Minho\nGarden and estuary\nMatosinhos spider crab\n\n# The legacy\nThe breads of Ramón’s father\n\n# Menu\nOyster and chestnut\nPraia de Mira forest\nPinto Duarte salt cod\nor\nCabeção squab and foie gras\n\n# Sweet moment\nChocolate and medronho\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nChocolate choux\nSelection of bonbons and single-origin chocolates' },
+      es: { menu:'Origen entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío\nCocido a la portuguesa\nHomenaje al Miño\nHuerta y ría\nCentolla de Matosinhos\n\n# La herencia\nLos panes del padre de Ramón\n\n# Menú\nOstra y castaña\nBosque de Praia de Mira\nBacalao Pinto Duarte\no\nPichón de Cabeção y foie gras\n\n# Momento dulce\nChocolate y madroño\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nChoux de chocolate\nSelección de bombones y chocolates de origen' }
+    },
+    descoberta: {
+      pt: { menu:'Descoberta entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia\nCozido à portuguesa\nHomenagem ao Minho\nHorta e ria\nSantola de Matosinhos\n\n# A herança\nOs pães do pai de Ramón\n\n# Menu\nOstra e castanha\nBosque da Praia de Mira\nMar e montanha\nBacalhau Pinto Duarte\nBorracho de Cabeção e foie gras\n“Queijo Serra da Estrela”\nPâté en croûte\nChocolate e medronho\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nChoux de chocolate\nSeleção de bombons e chocolates de origem' },
+      en: { menu:'Discovery Between Two Seas', pratos:'# To begin\nAlgarve-style carrot\nPortuguese cozido\nA tribute to the Minho\nGarden and estuary\nMatosinhos spider crab\n\n# The legacy\nThe breads of Ramón’s father\n\n# Menu\nOyster and chestnut\nPraia de Mira forest\nSea and mountain\nPinto Duarte salt cod\nCabeção squab and foie gras\n“Queijo Serra da Estrela”\nPâté en croûte\nChocolate and medronho\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nChocolate choux\nSelection of bonbons and single-origin chocolates' },
+      es: { menu:'Descubrimiento entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío\nCocido a la portuguesa\nHomenaje al Miño\nHuerta y ría\nCentolla de Matosinhos\n\n# La herencia\nLos panes del padre de Ramón\n\n# Menú\nOstra y castaña\nBosque de Praia de Mira\nMar y montaña\nBacalao Pinto Duarte\nPichón de Cabeção y foie gras\nQueso Serra da Estrela\nPâté en croûte\nChocolate y madroño\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nChoux de chocolate\nSelección de bombones y chocolates de origen' }
+    }
+  };
+  var VAZIO = { menu:'[Nome do menu]', data:'[Data]', pratos:'[Pratos degustados]', intro:'' };
+  var CAMPOS = ['lingua', 'menu', 'data', 'pratos', 'harm', 'intro', 'vinhos', 'fecho'];
+  var dados = { lingua:'pt', menu:'', data:'', pratos:'', harm:TXT.pt.harm, intro:'', vinhos:'', fecho:TXT.pt.fecho };
+  if (!MODELO) { try { var g = JSON.parse(localStorage.getItem('rfp-minuta') || 'null'); if (g) Object.assign(dados, g); } catch (e) {} }
+
+  var sh = el('div', 'sheet verso', document.body);
+  pos(el('img', 'abs canto', sh), 15.6, 8).src = 'assets/img/rfp-simbolo-charcoal.svg';
+  pos(el('img', 'abs canto', sh), 281.2, 202.7).src = 'assets/img/rfp-simbolo-charcoal.svg';
+  var esq = el('div', 'abs col esq', sh), dir = el('div', 'abs col dir', sh);
+  var fd = el('div', 'fit', esq), fe = el('div', 'fit', dir);   // harmonização à esquerda, menu à direita
+  var hMenu = el('h2', '', fe), dData = el('div', 'data', fe), dPratos = el('div', 'pratos', fe);
+  var hHarm = el('h2', '', fd), dIntro = el('div', 'intro', fd), dVinhos = el('div', 'vinhos', fd);
+  var dFecho = el('div', 'fecho', dir);
+
+  function linhas(txt){ return txt.replace(/\r/g, '').split('\n').map(function(l){ return l.trim(); }); }
+  function desenhar(){
+    hMenu.textContent = dados.menu || VAZIO.menu; hMenu.classList.toggle('vazio', !dados.menu);
+    dData.textContent = dados.data || VAZIO.data; dData.classList.toggle('vazio', !dados.data);
+    dPratos.innerHTML = '';
+    if (!dados.pratos.trim()) el('div', 'vazio', dPratos, VAZIO.pratos);
+    else linhas(dados.pratos.trim()).forEach(function(l){ if (!l) el('div', 'gap', dPratos); else if (l[0] === '#') el('div', 'momento', dPratos, l.replace(/^#+\s*/, '')); else el('div', '', dPratos, l); });
+    hHarm.textContent = dados.harm;
+    dIntro.textContent = dados.intro; dIntro.style.display = dados.intro.trim() ? '' : 'none';
+    dVinhos.style.marginTop = dados.intro.trim() ? '' : '6.5mm';
+    dVinhos.innerHTML = '';
+    linhas(dados.vinhos.trim()).filter(Boolean).forEach(function(l){
+      var p = l.split('|'), d = el('div', '', dVinhos, p[0].trim());
+      if (p[1] && p[1].trim()) el('span', 'do', d, ' - ' + p[1].trim());
+    });
+    dFecho.textContent = ''; linhas(dados.fecho).forEach(function(l, i){ if (i) el('br', '', dFecho); dFecho.appendChild(document.createTextNode(l)); });
+    // se o texto não couber (até 6 mm acima da mensagem final, ou ao fundo da página na esquerda), reduz tudo por igual
+    [[fd, 196], [fe, 180]].forEach(function(c){
+      c[0].style.transform = 'none';
+      var hmm = c[0].scrollHeight / (sh.getBoundingClientRect().height / 210), livre = c[1] - 31;
+      if (hmm > livre) c[0].style.transform = 'scale(' + (livre / hmm).toFixed(3) + ')';
+    });
+  }
+
+  if (!MODELO) {
+    document.body.classList.add('com-painel');
+    var pn = el('div', 'painel', document.body);
+    pn.innerHTML =
+      '<h1>Menu personalizado (minuta)</h1>' +
+      '<p class="ajuda">Preencher e carregar em Imprimir. Na impressora: papel A4 da minuta (face em branco para cima), horizontal, escala 100 %, sem margens. Fica guardado neste computador até carregar em Limpar.</p>' +
+      '<label>Pré-preencher <small>(substitui o nome e os pratos, na língua escolhida)</small></label><select id="f-preset"><option value="">—</option><option value="origem">Origem entre Dois Mares (menu curto)</option><option value="descoberta">Descoberta entre Dois Mares (menu longo)</option></select>' +
+      '<label>Língua dos textos fixos</label><select id="f-lingua"><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select>' +
+      '<label>Nome do menu</label><input id="f-menu" placeholder="Ex.: Origem entre Dois Mares">' +
+      '<label>Data <small>(opcional)</small></label><input id="f-data" placeholder="Ex.: 3 de novembro de 2026">' +
+      '<label>Pratos degustados <small>— um por linha; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
+      '<label>Título da harmonização</label><input id="f-harm">' +
+      '<label>Texto da harmonização <small>(opcional, em itálico)</small></label><textarea id="f-intro" rows="3"></textarea>' +
+      '<label>Vinhos <small>— um por linha: Vinho Ano | D.O.</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
+      '<label>Mensagem final</label><textarea id="f-fecho" rows="2"></textarea>' +
+      '<div class="bts"><button id="b-print">Imprimir</button><button class="sec" id="b-limpar">Limpar</button></div>';
+    CAMPOS.forEach(function(k){
+      var f = document.getElementById('f-' + k); f.value = dados[k];
+      f.addEventListener('input', function(){
+        if (k === 'lingua') {   // os textos fixos acompanham a língua, se ainda não foram alterados à mão
+          var ant = TXT[dados.lingua], nov = TXT[f.value];
+          if (dados.harm === ant.harm) { dados.harm = nov.harm; document.getElementById('f-harm').value = nov.harm; }
+          if (dados.fecho === ant.fecho) { dados.fecho = nov.fecho; document.getElementById('f-fecho').value = nov.fecho; }
+        }
+        dados[k] = f.value;
+        try { localStorage.setItem('rfp-minuta', JSON.stringify(dados)); } catch (e) {}
+        desenhar();
+      });
+    });
+    function preencher(){
+      var p = PRESETS[document.getElementById('f-preset').value];
+      if (!p) return;
+      p = p[document.getElementById('f-lingua').value];
+      ['menu', 'pratos'].forEach(function(k){ dados[k] = p[k]; document.getElementById('f-' + k).value = p[k]; });
+      try { localStorage.setItem('rfp-minuta', JSON.stringify(dados)); } catch (e) {}
+      desenhar();
+    }
+    document.getElementById('f-preset').addEventListener('change', preencher);
+    document.getElementById('f-lingua').addEventListener('change', preencher);   // muda a língua dos pratos se houver um menu escolhido
+    document.getElementById('b-print').onclick = function(){ window.print(); };
+    document.getElementById('b-limpar').onclick = function(){
+      if (!confirm('Apagar o menu preenchido?')) return;
+      try { localStorage.removeItem('rfp-minuta'); } catch (e) {}
+      location.reload();
+    };
+  }
+  document.fonts.ready.then(function(){ desenhar(); document.body.dataset.ready = '1'; });
+})();
+</script>
+</body>
+</html>
