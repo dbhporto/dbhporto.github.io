@@ -136,8 +136,8 @@
     }
   };
   var VAZIO = { menu:'[Nome do menu]', data:'[Data]', pratos:'[Pratos degustados]', intro:'' };
-  var CAMPOS = ['lingua', 'menu', 'data', 'pratos', 'harm', 'intro', 'vinhos', 'fecho'];
-  var dados = { lingua:'pt', menu:'', data:'', pratos:'', harm:TXT.pt.harm, intro:'', vinhos:'', fecho:TXT.pt.fecho };
+  var CAMPOS = ['lingua', 'tamanho', 'menu', 'data', 'pratos', 'harm', 'intro', 'vinhos', 'fecho'];
+  var dados = { lingua:'pt', tamanho:'100', menu:'', data:'', pratos:'', harm:TXT.pt.harm, intro:'', vinhos:'', fecho:TXT.pt.fecho };
   if (!MODELO) { try { var g = JSON.parse(localStorage.getItem('rfp-minuta') || 'null'); if (g) Object.assign(dados, g); } catch (e) {} }
 
   var sh = el('div', 'sheet verso', document.body);
@@ -165,12 +165,18 @@
       if (p[1] && p[1].trim()) el('span', 'do', d, ' - ' + p[1].trim());
     });
     dFecho.textContent = ''; linhas(dados.fecho).forEach(function(l, i){ if (i) el('br', '', dFecho); dFecho.appendChild(document.createTextNode(l)); });
+    // tamanho da letra escolhido no painel (zoom: o texto volta a partir as linhas na largura da coluna);
     // se o texto não couber (até 6 mm acima da mensagem final, ou ao fundo da página na esquerda), reduz tudo por igual
+    // os dois lados ficam sempre com a mesma letra: a redução do lado que não cabe aplica-se também ao outro
+    var k = (parseFloat(dados.tamanho) || 100) / 100, mmpx = sh.getBoundingClientRect().height / 210, s = 1;
     [[fd, 196], [fe, 180]].forEach(function(c){
-      c[0].style.transform = 'none';
-      var hmm = c[0].scrollHeight / (sh.getBoundingClientRect().height / 210), livre = c[1] - 31;
-      if (hmm > livre) c[0].style.transform = 'scale(' + (livre / hmm).toFixed(3) + ')';
+      c[0].style.transform = 'none'; c[0].style.zoom = k; c[0].style.top = (31 / k) + 'mm';   // o zoom também escala o "top": compensar para começar sempre a 31 mm
+      var hmm = c[0].getBoundingClientRect().height / mmpx, livre = c[1] - 31;
+      if (hmm > livre) s = Math.min(s, livre / hmm);
     });
+    if (s < 1) [fd, fe].forEach(function(e){ e.style.transform = 'scale(' + s.toFixed(3) + ')'; });
+    var info = document.getElementById('i-tamanho');
+    if (info) info.textContent = Math.round(k * 100) + ' %' + (s < 1 ? '  (para caber, sai a ' + Math.round(k * s * 100) + ' %)' : '');
   }
 
   if (!MODELO) {
@@ -181,6 +187,7 @@
       '<p class="ajuda">Preencher e carregar em Imprimir. Na impressora: papel A4 da minuta (face em branco para cima), horizontal, escala 100 %, sem margens. Fica guardado neste computador até carregar em Limpar.</p>' +
       '<label>Pré-preencher <small>(substitui o nome e os pratos, na língua escolhida)</small></label><select id="f-preset"><option value="">—</option><option value="origem">Origem entre Dois Mares (menu curto)</option><option value="descoberta">Descoberta entre Dois Mares (menu longo)</option></select>' +
       '<label>Língua dos textos fixos</label><select id="f-lingua"><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select>' +
+      '<label>Tamanho da letra <small id="i-tamanho">100 %</small></label><input id="f-tamanho" type="range" min="70" max="130" step="5">' +
       '<label>Nome do menu</label><input id="f-menu" placeholder="Ex.: Origem entre Dois Mares">' +
       '<label>Data <small>(opcional)</small></label><input id="f-data" placeholder="Ex.: 3 de novembro de 2026">' +
       '<label>Pratos degustados <small>— um por linha; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
