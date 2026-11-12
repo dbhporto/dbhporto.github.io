@@ -71,7 +71,7 @@ NV · TITAN OF DOURO EXTRA BRUTO ROSÉ | 69 | Cima Corgo · Mourisco
 2022 · SIDÓNIO DE SOUSA SPECIAL CUVÉE | 39 | Anadia · Bical, Maria Gomes, Arinto
 QUINTA DOS ABIBES SUBLIME | 164 | Anadia · Arinto
 2022 · LUÍS PATO VINHA PAN | 49 | Anadia · Baga
-2021 · AEQUINOCTIUM HIBERNUS | 96 | Anadia · Arinto, Chardonnay, Bical, outras
+2021 · AEQUINOCTIUM HIBERNUS | 96 | Anadia · Arinto, Chardonnay, Bical, Outras
 NV · VÁDIO PERPETUUM | 67 | Anadia · Bical, Cercial, Baga
 NV · FILIPA PATO 3B | 38 | Anadia · Bical, Maria Gomes, Cercial
 2017 · KOMPASSUS GRANDE RESERVA BLANC DE NOIRS | 66 | Cantanhede · Baga, Pinot Noir
@@ -149,7 +149,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 2023 · PARAPENTE | 48 | Lima · Loureiro
 2022 · SEM IGUAL RAMADAS WOOD | 93 | Amarante · Arinto, Azal
 2021 · ANSELMO MENDES PARCELA ÚNICA | 90 | Monção e Melgaço · Alvarinho
-2014-2022 · REPARTIDO 14.22 | 53 | Monção e Melgaço · Alvarinho
+2014–2022 · REPARTIDO 14.22 | 53 | Monção e Melgaço · Alvarinho
 2020 · ADN DÓCIL | 49 | Monção e Melgaço · Loureiro
 2010 · ROYAL PALMEIRA | 135 | Cávado · Loureiro
 2023 · SANTIAGO & NUNO MIRA DO Ó SOU | 87 | Monção e Melgaço · Alvarinho
@@ -441,7 +441,7 @@ NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
 2024 · QUINTA DA RORIZ CHRYSEIA | 182 | Cima Corgo · Touriga Nacional, Touriga Franca
 2016 · QUINTA DA PEDRA ALTA N3 | 56 | Cima Corgo · Touriga Nacional, Touriga Franca, Tinta Barroca
 2015 · QUINTA DO FOJO VINHA DO FOJO | 223 | Cima Corgo · Vinhas Velhas
-2013 · FOJO | 521 | Cima Corgo · Tinta Roriz, outras
+2013 · FOJO | 521 | Cima Corgo · Tinta Roriz, Outras
 2023 · QUINTA DO JAVALI CLOS FONTE DO SANTO | 78 | Douro Superior · Vinhas Velhas
 2021 · QUINTA DO CÔTTO BASTARDO | 92 | Baixo Corgo · Bastardo
 = 32
@@ -452,7 +452,7 @@ NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
 2015 · QUINTA DO CRASTO TINTA RORIZ | 167 | Cima Corgo · Tinta Roriz
 2016 · QUINTA DO CRASTO VINHA DA PONTE | 611 | Cima Corgo · Vinhas Velhas
 2018 · QUINTA DO VALE MEÃO | 527 | Douro Superior · Touriga Nacional, Touriga Franca, Tinta Roriz, Tinta Barroca
-NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Roriz, Tinta Carvalha, Rufete, outras
+NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Roriz, Tinta Carvalha, Rufete, Outras
 2015 · QUINTA DE MARITÁVORA Nº2 GRANDE RESERVA | 111 | Douro Superior · Touriga Franca, Touriga Nacional, Tinta Roriz
 2024 · QUINTA DAS CARVALHAS TINTA FRANCISCA | 127 | Cima Corgo · Tinta Francisca
 2021 · VALE DA RAPOSA TINTO CÃO | 70 | Baixo Corgo · Tinto Cão
