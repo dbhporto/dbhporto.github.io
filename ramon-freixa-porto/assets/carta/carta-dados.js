@@ -395,10 +395,9 @@ NV · AZORES WINE COMPANY 3 COLHEITAS | 104 | Pico · Arinto dos Açores
 2021 · MONTE BLUNA TIC-TAC | 83 | Arruda · Tinta Miúda
 2023 · MONTE D’OIRO RESERVA | 70 | Alenquer · Syrah
 2023 · PÁGINA | 44 | Óbidos · Pinot Noir
-= 28
 ## Alentejo
 NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
-= 30
+= 29
 # 06 — Vinho Tinto | Red Wine
 ## Vinho Verde
 2024 · CONSTANTINO RAMOS ZAFIRAH | 45 | Monção e Melgaço · Alvarelhão, Borraçal, Pedral, Vinhão
@@ -421,7 +420,7 @@ NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
 2022 · QUINTA DO BARRIOLO MENINO FRANCISCO | 62 | Baixo Corgo · Touriga Nacional, Tinta Roriz, Touriga Franca
 2020 · TITAN OF DOURO ESTÁGIO EM BARRO | 116 | Cima Corgo · Vinhas Velhas
 2021 · DUAS ÁRVORES | 37 | Cima Corgo · Vinhas Velhas
-= 31
+= 30
 ## Douro
 2022 · DUAS ÁRVORES GRANDE RESERVA | 126 | Cima Corgo · Touriga Nacional, Outras
 2017 · QUINTA DA COSTA DO PINHÃO GRADUAL | 71 | Cima Corgo · Touriga Nacional, Tinta Roriz, Touriga Franca
@@ -444,7 +443,7 @@ NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
 2013 · FOJO | 521 | Cima Corgo · Tinta Roriz, Outras
 2023 · QUINTA DO JAVALI CLOS FONTE DO SANTO | 78 | Douro Superior · Vinhas Velhas
 2021 · QUINTA DO CÔTTO BASTARDO | 92 | Baixo Corgo · Bastardo
-= 32
+= 31
 ## Douro
 2018 · QUINTA DE CEIS VINHA DA MANTELINHA | 194 | Cima Corgo · Touriga Franca, Touriga Nacional, Malvasia Preta, Outras
 2020 · FAMÍLIA SILVA BRANCO PEDIGREE | 101 | Cima Corgo · Vinhas Velhas
@@ -469,7 +468,7 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2015 · POEIRINHO GARRAFEIRA | 176 | Cantanhede · Baga
 2022 · QUINTA DAS BÁGEIRAS AVÔ FAUSTO | 66 | Anadia · Baga, Touriga Nacional
 2014 · PRINCIPAL GRANDE RESERVA | 285 | Anadia · Cabernet Sauvignon, Touriga Nacional, Outras
-= 33
+= 32
 ## Bairrada
 2021 · PRIOR LUCAS DOMINICAL’S | 69 | Vinhas Velhas
 2020 · V PURO OUTRORA CLÁSSICO | 97 | Anadia · Baga
@@ -494,7 +493,7 @@ MARCADO A FERROS | 68 | Alva · Touriga Nacional, Alfrocheiro, Outras
 2021 · BEYRA VINHA DE SANTA MARIA | 81 | Castelo Rodrigo · Tinta Roriz
 2022 · MARTIN BOUTIQUE WINES 70/30 | 59 | Cova da Beira, Pinhel · Touriga Nacional, Syrah, Rufete
 2023 · CASAS ALTAS | 36 | Cova da Beira · Rufete
-= 34
+= 33
 ## Lisboa
 2021 · ADEGAMÃE ATLÂNTICO | 66 | Torres Vedras · Pinot Noir
 2020 · MONTE BLUNA TIC-TAC | 70 | Arruda · Syrah
@@ -515,7 +514,7 @@ MARCADO A FERROS | 68 | Alva · Touriga Nacional, Alfrocheiro, Outras
 ## Península de Setúbal
 2011 · CEBOLAL CAIOS | 112 | Setúbal · Alicante Bouschet, Aragonez
 2018 · TROIS | 120 | Palmela · Castelão
-= 35
+= 34
 ## Península de Setúbal
 2022 · HORÁCIO SIMÕES RESERVA | 38 | Setúbal · Castelão, Outras
 2018 · HERDADE DO PORTOCARRO CAVALO MALUCO | 87 | Setúbal · Petit Verdot, Touriga Franca, Touriga Nacional
@@ -539,7 +538,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2023 · SUSANA ESTEBAN CENTENÁRIA | 78 | Portalegre · Vinhas Velhas
 ## Algarve
 2025 · ARVAD NEGRAMOLE | 42 | Lagoa · Negramole
-= 36
+= 35
 ## Algarve
 2021 · MORGADO DO QUINTÃO | 96 | Lagoa · Castelão
 2022 · JOÃO CLARA RESERVA | 63 | Lagos · Alicante Bouschet, Touriga Nacional, Syrah
@@ -561,7 +560,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2020 · PAGO DE CARRAOVEJAS CUESTA DE LAS LIEBRES | 984 | Tinto Fino
 2022 · VEGA SICILIA ALIÓN | 227 | Tempranillo
 2021 · VEGA SICILIA VALBUENA 5º | 366 | Tempranillo, Merlot
-= 37
+= 36
 ### Castilla y León · Ribera del Duero
 2015 · VEGA SICILIA ÚNICO | 834 | Tempranillo, Cabernet Sauvignon
 2022 · MAURO GARMÓN | 118 | Tempranillo
@@ -584,7 +583,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2012 · MARQUÉS DE MURRIETA CASTILLO YGAY GRAN RESERVA | 630 | Rioja Alta · Tempranillo, Mazuelo
 2022 · BENJAMIN DE ROTHSCHILD & VEGA SICILIA MACÁN CLÁSICO | 127 | Rioja Alavesa, Rioja Alta · Tempranillo, Garnacha
 2015 · REMÍREZ DE GANUZA GRAN RESERVA | 248 | Rioja Alavesa · Graciano, Malvasia, Tempranillo, Viura
-= 38
+= 37
 ### Catalunha · Priorat
 2022 · ÁLVARO PALACIOS FINCA DOFÍ | 205 | Garnacha, Cariñena
 2023 · TERROIR AL LIMIT ARBOSSAR | 206 | Carignan
@@ -607,7 +606,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2022 · DOMAINE FRANÇOIS GAUNOUX POMMARD 1ER CRU LES ÉPENOTS | 268 | Côte de Beaune · Pinot Noir
 ### Beaujolais
 2019 · DOMAINE CHIGNARD FLEURIE LE COCHONNIER | 86 | Gamay
-= 39
+= 38
 ### Vale do Ródano | Vallée du Rhône
 2022 · DOMAINE DES LISES CROZES-HERMITAGE | 86 | Norte · Syrah
 2018 · CHAPOUTIER CROZES-HERMITAGE VARONNIERS | 211 | Norte · Syrah
@@ -631,7 +630,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2015 · CHÂTEAU FLEUR CARDINALE | 149 | Saint-Émilion · Merlot, Cabernet Sauvignon, Cabernet Franc
 2019 · CHÂTEAU DE PEZ | 126 | Saint-Estèphe · Cabernet Sauvignon, Merlot, Cabernet Franc
 2017 · CHÂTEAU PICHON COMTESSE | 343 | Pauillac · Cabernet Sauvignon, Merlot, Cabernet Franc
-= 40
+= 39
 ## Itália | Italy
 ### Piemonte
 2022 · GAJA BAROLO DAGROMIS | 281 | Barolo DOCG · Nebbiolo
@@ -649,7 +648,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2018 · ARMANI AMARONE RISERVA CUSLANUS | 116 | Amarone della Valpolicella DOCG Classico Riserva · Corvina, Corvinone, Rondinella
 ### Etna
 2019 · CARRANCO CONTRADA ETNA ROSSO | 209 | Etna Rosso DOC · Nerello Mascalese, Nerello Cappuccio
-= 42
+= 41
 # 07 — Colheita Tardia | Late Harvest
 ## Vinho Verde
 2023 · SOUSA LOPES 50 cl | 72 | Ave · Petit Manseng
@@ -670,12 +669,12 @@ HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
 ## Alemanha | Germany
 ### Mosel
 2010 · MARKUS MOLITOR WEHLENER SONNENUHR TBA 37,5 cl | 387 | Saar · Riesling
-= 43
+= 42
 ## Hungria | Hungary
 ### Tokaj
 2014 · DISZNÓKŐ TOKAJI ASZÚ 5 PUTTONYOS 50 cl | 136 | Tokaj · Furmint, Hárslevelű
 2007 · DISZNÓKŐ TOKAJI ASZÚ ESZENCIA 37,5 cl | 1066 | Furmint, Hárslevelű
-= 45
+= 44
 # 08 — Vinho do Porto | Port Wine
 ## Porto Branco | White Port
 10 YO · NIEPOORT | 87
@@ -706,7 +705,7 @@ HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
 40 YO · GRAHAM’S | 506
 50 YO · QUINTA DO NOVAL | 957
 50 YO · MENIN 50 cl | 505
-= 46
+= 45
 ## Porto Tawny | Tawny Port
 80 YO · QUINTA DAS CARVALHAS | 1771
 2003 · KOPKE | 174
@@ -735,7 +734,7 @@ HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
 2014 · WINE&SOUL PINTAS | 350
 2007 · DOW’S | 460
 2004 · RAMOS PINTO ERVAMOIRA | 311
-= 48
+= 47
 # 09 — Moscatel
 ## Douro
 2007 · QUINTA DO PORTAL RESERVA | 90 | Cima Corgo · Moscatel Galego
@@ -745,7 +744,7 @@ NV · HORÁCIO SIMÕES EXCELLENT 50 cl | 125 | Setúbal · Moscatel de Alexandri
 2010 · HORÁCIO SIMÕES COSTA A COSTA 50 cl | 81 | Setúbal · Moscatel Roxo
 10 YO · QUINTA DO PILOTO 50 cl | 112 | Palmela · Moscatel Roxo
 40 YO · JMF ALAMBRE | 275 | Setúbal · Moscatel Roxo
-= 50
+= 49
 # 10 — Outros Fortificados | Other Fortified Wines
 ## Bairrada · Abafado
 2007 · QUINTA DAS BÁGEIRAS | 136 | Anadia · Baga
@@ -753,7 +752,7 @@ NV · HORÁCIO SIMÕES EXCELLENT 50 cl | 125 | Setúbal · Moscatel de Alexandri
 15 YO · VILLA OEIRAS | 127 | Arinto, Galego Dourado, Ratinho
 ## Açores | Azores · Pico
 10 YO · AZORES WINE COMPANY THOMAS JEFFERSON 37,5 cl | 166 | Arinto dos Açores, Terrantez do Pico, Verdelho
-= 52
+= 51
 # 11 — Vinho da Madeira | Madeira Wine
 10 YO · BARBEITO BOAL | 109
 10 YO · JUSTINO’S MALVASIA | 103

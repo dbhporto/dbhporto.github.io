@@ -1,4 +1,4 @@
-/* Carta de vinhos Ramón Freixa Porto — desenha as 52 páginas A4 a partir de carta-dados.js.
+/* Carta de vinhos Ramón Freixa Porto — desenha as 51 páginas A4 a partir de carta-dados.js.
    Usado pela versão para impressão (carta-vinhos/carta.html) e pela carta digital (carta-vinhos.html).
 
    Formato de carta-dados.js (uma linha por elemento):
@@ -9,15 +9,15 @@
   // Separadores de secção: página -> [número, título PT, título EN]
   var DIVIDERS = {
     5:['01','Vinho a Copo','Glass of Wine'], 8:['02','Espumantes','Sparkling Wine'], 11:['03','Champanhe','Champagne'],
-    14:['04','Vinho Branco','White Wine'], 26:['05','Vinho Rosé','Rosé Wine'], 29:['06','Vinho Tinto','Red Wine'],
-    41:['07','Colheita Tardia','Late Harvest'], 44:['08','Vinho do Porto','Port Wine'], 47:['09','Moscatel',''],
-    49:['10','Outros Fortificados','Other Fortified Wines'], 51:['11','Vinho da Madeira','Madeira Wine']
+    14:['04','Vinho Branco','White Wine'], 26:['05','Vinho Rosé','Rosé Wine'], 28:['06','Vinho Tinto','Red Wine'],
+    40:['07','Colheita Tardia','Late Harvest'], 43:['08','Vinho do Porto','Port Wine'], 46:['09','Moscatel',''],
+    48:['10','Outros Fortificados','Other Fortified Wines'], 50:['11','Vinho da Madeira','Madeira Wine']
   };
   var INDEX = [
     ['01 — Vinho a Copo | Glass of Wine','05'], ['02 — Espumantes | Sparkling Wine','08'], ['03 — Champanhe | Champagne','11'],
-    ['04 — Vinho Branco | White Wine','14'], ['05 — Vinho Rosé | Rosé Wine','26'], ['06 — Vinho Tinto | Red Wine','29'],
-    ['07 — Colheita Tardia | Late Harvest','41'], ['08 — Vinho do Porto | Port Wine','44'], ['09 — Moscatel','47'],
-    ['10 — Outros Fortificados | Other Fortified Wines','49'], ['11 — Vinho da Madeira | Madeira Wine','51']
+    ['04 — Vinho Branco | White Wine','14'], ['05 — Vinho Rosé | Rosé Wine','26'], ['06 — Vinho Tinto | Red Wine','28'],
+    ['07 — Colheita Tardia | Late Harvest','40'], ['08 — Vinho do Porto | Port Wine','43'], ['09 — Moscatel','46'],
+    ['10 — Outros Fortificados | Other Fortified Wines','48'], ['11 — Vinho da Madeira | Madeira Wine','50']
   ];
   var INTRO_PT = [
     'Em Portugal, o vinho é uma forma de literatura líquida.',
@@ -114,7 +114,7 @@
         else if (it.k === 's'){ el(pg, 'rast s', it.text, y, { left:'40mm' }); prev = 's'; }
         else {
           // Listas de uma linha (Porto e Madeira) usam o peso normal, como no original
-          var row = document.createElement('div'); row.className = (n === 45 || n === 46 || n === 52) ? 'single' : ''; pg.appendChild(row);
+          var row = document.createElement('div'); row.className = (n === 44 || n === 45 || n === 51) ? 'single' : ''; pg.appendChild(row);
           el(row, 'bev name', it.name, y, { left:'40mm' });
           el(row, 'bev price', it.price + ' €', y);
           if (it.detail){ y += GAP.w_detail; el(row, 'bev detail', it.detail, y, { left:'40mm' }); }
@@ -125,7 +125,7 @@
       return y;
     }
 
-    for (var n = 5; n <= 52; n++){
+    for (var n = 5; n <= 51; n++){
       if (DIVIDERS[n]){
         var d = DIVIDERS[n], dp = newPage(n, 'dark');
         el(dp, 'rast div-num', d[0], 121.5);

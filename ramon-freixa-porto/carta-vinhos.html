@@ -140,7 +140,7 @@
       leaves.forEach(function(l, j){ l.classList.toggle('near', j >= current - 1 && j <= current + 1); });
       prevBtn.disabled = current === 0; nextBtn.disabled = current === n - 1;
       var num = leaves[current].dataset.num;
-      counter.textContent = current === 0 ? '' : (current === n - 1 ? '' : num + ' / 52');
+      counter.textContent = current === 0 ? '' : (current === n - 1 ? '' : num + ' / 51');
     }
     function goNext(){ if (current >= n - 1) return; leaves[current].classList.add('flipped'); current++; render(); }
     function goPrev(){ if (current <= 0) return; current--; leaves[current].classList.remove('flipped'); render(); }
