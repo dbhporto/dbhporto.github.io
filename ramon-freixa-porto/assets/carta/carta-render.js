@@ -131,7 +131,9 @@
         el(dp, 'rast div-num', d[0], 121.5);
         el(dp, 'rast div-title', d[1], 138.6);
         if (d[2]) el(dp, 'rast div-sub', d[2], 155.0);
-        image(dp, 'div-symbol', IMG + 'rfp-simbolo-white.png', '');
+        // símbolo em vetor (SVG), não PNG: a transparência do PNG imprime-se como um retângulo de grafite diferente
+        // (mesma posição do PNG antigo, sem a margem transparente de 0,63 mm)
+        image(dp, 'div-symbol', IMG + 'rfp-simbolo-white.svg', '', 'left:95.28mm;top:236.48mm;width:19.41mm');
         continue;
       }
       if (!pagesData[n]){ console.warn('falta a página', n); continue; }
