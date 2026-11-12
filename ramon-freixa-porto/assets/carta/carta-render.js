@@ -154,7 +154,9 @@
 
   // Coloca cada texto pela linha de base (como no Pages), depois de as fontes carregarem
   function placeBaselines(root){
-    return document.fonts.ready.then(function(){
+    // espera pelas fontes, mas no máximo 5 s (em alguns tablets antigos document.fonts não existe ou nunca fica "ready")
+    var fontes = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    return Promise.race([fontes, new Promise(function(r){ setTimeout(r, 5000); })]).then(function(){
       var probe = {};
       function ascent(cls){
         if (probe[cls] != null) return probe[cls];

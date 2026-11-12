@@ -11,14 +11,16 @@
 <style>
   :root{
     --chrome: 150px;
-    --page-w: min(92vw, calc((100svh - var(--chrome)) * 210 / 297), 640px);
+    /* vh primeiro: os tablets com sistema antigo não conhecem svh, e com svh a carta ficava com tamanho zero (ecrã preto) */
+    --page-w: min(92vw, calc((100vh - var(--chrome)) * 210 / 297), 640px);
     --page-h: calc(var(--page-w) * 297 / 210);
     --linen:#3c3c3b;
   }
+  @supports (height:100svh){ :root{ --page-w: min(92vw, calc((100svh - var(--chrome)) * 210 / 297), 640px); } }
   *{ box-sizing:border-box; }
   html,body{ height:100%; }
   body{
-    margin:0; min-height:100svh;
+    margin:0; min-height:100vh; min-height:100svh;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:clamp(12px,2.4vh,22px);
     background:radial-gradient(120% 90% at 50% 8%, #46433f 0%, #262524 60%, #1c1b1a 100%);
@@ -106,6 +108,9 @@
 <script src="assets/carta/carta-render.js"></script>
 <script>
 (function(){
+  // Se alguma coisa falhar num browser, o erro aparece no ecrã (na linha por baixo dos botões), para se poder diagnosticar
+  function mostraErro(msg){ var e = document.querySelector('.stage-label'); if (e){ e.textContent = 'Erro: ' + msg; e.style.color = '#e8a598'; e.style.opacity = 1; e.style.textTransform = 'none'; e.style.letterSpacing = '0'; } }
+  window.onerror = function(m, src, linha){ mostraErro(m + ' (linha ' + linha + ')'); };
   // tablets (ecrã tátil com o lado menor >= 600 px, inclui o iPad que se anuncia como Mac) ou ?simples: folhear sem 3D
   var tactil = (navigator.maxTouchPoints || 0) > 1 || 'ontouchstart' in window;
   if (/[?&]simples\b/.test(location.search) || (tactil && Math.min(screen.width, screen.height) >= 600)) document.body.classList.add('flat');
@@ -139,6 +144,12 @@
     leaves.forEach(function(l, i){ l.style.zIndex = n - i; });
 
     function fit(){
+      // reserva para browsers sem min()/calc() nas variáveis CSS: tamanho calculado aqui, em píxeis
+      var bw = document.querySelector('.book-wrap');
+      if (bw.getBoundingClientRect().width < 50){
+        var pw = Math.min(window.innerWidth * 0.92, (window.innerHeight - 150) * 210 / 297, 640);
+        bw.style.width = pw + 'px'; bw.style.height = (pw * 297 / 210) + 'px';
+      }
       var w = book.getBoundingClientRect().width;
       var k = w / (210 * 96 / 25.4) * 1.002;   // +0,2 % para não sobrar um fio da folha nas margens
       book.querySelectorAll('.scaler').forEach(function(s){ s.style.transform = 'scale(' + k + ')'; });
@@ -195,7 +206,7 @@
     window.addEventListener('hashchange', function(){ if (/^#\d+$/.test(location.hash)) goToPage(location.hash.slice(1)); });
     render();
     document.body.dataset.ready = '1';
-  });
+  })['catch'](function(e){ mostraErro((e && e.message) || String(e)); });
 })();
 </script>
 </body>
