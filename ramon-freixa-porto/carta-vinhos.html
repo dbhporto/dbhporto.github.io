@@ -41,6 +41,13 @@
   .leaf.near{ display:block; will-change:transform; }
   .leaf.flipped{ transform:rotateY(-178deg); }
   .book.instant .leaf{ transition:none; }
+  /* Tablets (e ?simples): a folha desliza para o lado em vez de rodar em 3D. No iPad as folhas são grandes e o 3D
+     esgotava a memória gráfica do Safari: a página ficava preta e deixava de folhear. */
+  .flat .book-wrap{ perspective:none; }
+  .flat .book{ transform-style:flat; }
+  .flat .leaf{ transform-style:flat; backface-visibility:visible; transition:transform .45s ease, opacity .45s ease; }
+  .flat .leaf.near{ will-change:auto; }
+  .flat .leaf.flipped{ transform:translateX(-104%); opacity:0; }
   /* As páginas A4 (210 × 297 mm) são reduzidas ao tamanho do ecrã, sem mudar a proporção */
   .leaf .scaler{ position:absolute; left:0; top:0; width:210mm; height:297mm; transform-origin:0 0; }
 
@@ -99,6 +106,9 @@
 <script src="assets/carta/carta-render.js"></script>
 <script>
 (function(){
+  // tablets (ecrã tátil com o lado menor >= 600 px, inclui o iPad que se anuncia como Mac) ou ?simples: folhear sem 3D
+  var tactil = (navigator.maxTouchPoints || 0) > 1 || 'ontouchstart' in window;
+  if (/[?&]simples\b/.test(location.search) || (tactil && Math.min(screen.width, screen.height) >= 600)) document.body.classList.add('flat');
   var book = document.getElementById('book');
   var stage = document.createElement('div');   // as páginas A4 são desenhadas aqui e depois metidas nas folhas
   stage.className = 'carta'; stage.style.cssText = 'position:absolute;left:-99999px;top:0';

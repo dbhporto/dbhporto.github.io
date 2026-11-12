@@ -49,11 +49,15 @@
     return pages;
   }
 
-  /* opts: img (pasta das imagens, com / no fim), cover ('print' = capa branca do PDF; 'none' = sem capa) */
+  /* opts: img (pasta das imagens, com / no fim), cover ('print' = capa branca do PDF; 'none' = sem capa),
+           semSeparadores (versão sem as páginas grafite dos capítulos: as páginas são renumeradas e o índice também) */
   function build(book, text, opts){
     opts = opts || {};
     var IMG = opts.img || '../assets/img/';
     var pagesData = parse(text), out = [], report = [];
+    var SEM = !!opts.semSeparadores;
+    // número impresso da página n: sem separadores, desconta os separadores que ficam antes dela
+    function num(n){ if (!SEM) return n; var k = 0; for (var d in DIVIDERS) if (+d < n) k++; return n - k; }
 
     function el(parent, cls, txt, baseline, extra){
       var d = document.createElement('div');
@@ -92,8 +96,10 @@
     p = newPage(4);
     el(p, 'rast t', 'ÍNDICE | INDEX', 36.2, { left:'40mm' });
     INDEX.forEach(function(r, i){
-      el(p, 'rast idx', r[0], 59.4 + i * 10.45, { left:'40mm' }).dataset.goto = +r[1];
-      el(p, 'rast idx', r[1], 59.4 + i * 10.45, { right:'18mm' }).dataset.goto = +r[1];
+      // sem separadores, o capítulo começa na página de vinhos que vinha a seguir ao separador
+      var pg = SEM ? ('0' + num(+r[1] + 1)).slice(-2) : r[1];
+      el(p, 'rast idx', r[0], 59.4 + i * 10.45, { left:'40mm' }).dataset.goto = +pg;
+      el(p, 'rast idx', pg, 59.4 + i * 10.45, { right:'18mm' }).dataset.goto = +pg;
     });
     pageNum(p, 4);
 
@@ -121,12 +127,13 @@
           prev = it.detail ? 'w' : 'single';
         }
       });
-      pageNum(pg, n);
+      pageNum(pg, num(n));
       return y;
     }
 
     for (var n = 5; n <= 51; n++){
       if (DIVIDERS[n]){
+        if (SEM) continue;
         var d = DIVIDERS[n], dp = newPage(n, 'dark');
         el(dp, 'rast div-num', d[0], 121.5);
         el(dp, 'rast div-title', d[1], 138.6);
@@ -138,7 +145,7 @@
       }
       if (!pagesData[n]){ console.warn('falta a página', n); continue; }
       // Ajusta o espaçamento só se a página não couber (mínimo 88 %)
-      var pg = newPage(n), sq = 1, bottom = renderContent(pg, n, pagesData[n], sq);
+      var pg = newPage(num(n)), sq = 1, bottom = renderContent(pg, n, pagesData[n], sq);
       while (bottom > BOTTOM && sq > 0.88){ sq -= 0.01; bottom = renderContent(pg, n, pagesData[n], sq); }
       report.push({ n:n, squeeze:+sq.toFixed(2), bottom:+bottom.toFixed(1), overflow: bottom > BOTTOM });
     }
