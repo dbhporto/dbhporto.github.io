@@ -50,13 +50,13 @@
   .verso .fit{ position:absolute; left:0; right:0; top:31mm; transform-origin:50% 0; }
   .verso h2{ margin:0; font-weight:500; font-size:3mm; line-height:4mm; letter-spacing:.08em; text-transform:uppercase; }
   .verso .data{ margin-top:1.2mm; font-weight:300; font-size:2.4mm; letter-spacing:.04em; color:var(--cinza); }
-  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.1mm; line-height:6.35mm; }
-  .verso .pratos .gap{ height:12.7mm; }                 /* linha em branco = separação de momentos, como na minuta */
-  .verso .pratos .momento{ font-size:2.4mm; letter-spacing:.2em; text-transform:uppercase; color:var(--cinza); }   /* linha começada por # = título do momento */
-  .verso .pratos .gap:has(+ .momento){ height:6.35mm; }   /* com título, basta meia separação */
+  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.3mm; line-height:4.8mm; }   /* letra maior e linhas mais juntas (como no menu A5), para não ter de reduzir */
+  .verso .pratos .gap{ height:5.5mm; }                  /* linha em branco = separação de momentos */
+  .verso .pratos .momento{ font-size:2.6mm; letter-spacing:.2em; text-transform:uppercase; color:var(--cinza); }   /* linha começada por # = título do momento */
+  .verso .pratos .gap:has(+ .momento){ height:4mm; }   /* com título, basta meia separação */
   .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
-  .verso .vinhos{ margin-top:13mm; font-weight:400; font-size:3.1mm; line-height:9.9mm; }
-  .verso .vinhos .do{ font-weight:300; font-size:2.55mm; color:var(--cinza); }
+  .verso .vinhos{ margin-top:9mm; font-weight:400; font-size:3.3mm; line-height:7mm; }
+  .verso .vinhos .do{ font-weight:300; font-size:2.8mm; color:var(--cinza); }
   .verso .fecho{ position:absolute; left:0; right:0; top:186mm; font-weight:300; font-style:italic; font-size:2.75mm; line-height:4.6mm; }
   .vazio{ color:var(--cinza); }
   @media print{ body.com-painel .vazio{ display:none; } }   /* os campos por preencher ([Data], [Nome do menu]...) só aparecem no ecrã, nunca na impressão */
@@ -176,15 +176,23 @@
     // tamanho da letra escolhido no painel (zoom: o texto volta a partir as linhas na largura da coluna);
     // se o texto não couber (até 6 mm acima da mensagem final, ou ao fundo da página na esquerda), reduz tudo por igual
     // os dois lados ficam sempre com a mesma letra: a redução do lado que não cabe aplica-se também ao outro
-    var k = (parseFloat(dados.tamanho) || 100) / 100, mmpx = sh.getBoundingClientRect().height / 210, s = 1;
-    [[fd, 196], [fe, 180]].forEach(function(c){
-      c[0].style.transform = 'none'; c[0].style.zoom = k; c[0].style.top = (31 / k) + 'mm';   // o zoom também escala o "top": compensar para começar sempre a 31 mm
-      var hmm = c[0].getBoundingClientRect().height / mmpx, livre = c[1] - 31;
-      if (hmm > livre) s = Math.min(s, livre / hmm);
-    });
-    if (s < 1) [fd, fe].forEach(function(e){ e.style.transform = 'scale(' + s.toFixed(3) + ')'; });
+    // se sobrar espaço, a letra cresce até 125 % (como no menu A5); se não couber, reduz
+    var k0 = (parseFloat(dados.tamanho) || 100) / 100, mmpx = sh.getBoundingClientRect().height / 210, s = 1, k = k0;
+    function medir(z){
+      var r = 1.25;
+      [[fd, 196], [fe, 180]].forEach(function(c){
+        c[0].style.transform = 'none'; c[0].style.zoom = z; c[0].style.top = (31 / z) + 'mm';   // o zoom também escala o "top": compensar para começar sempre a 31 mm
+        r = Math.min(r, (c[1] - 31) / (c[0].getBoundingClientRect().height / mmpx));
+      });
+      return r;
+    }
+    var r = medir(k0);
+    if (r > 1) {   // cresce com zoom (as linhas voltam a partir na largura da coluna); confirma que continua a caber
+      for (var g = Math.min(r, 1.25); g > 1.005; g -= 0.02) { k = k0 * g; if (medir(k) >= 1) break; }
+      if (g <= 1.005) { k = k0; medir(k0); }
+    } else if (r < 1) { s = r; [fd, fe].forEach(function(e){ e.style.transform = 'scale(' + s.toFixed(3) + ')'; }); }
     var info = document.getElementById('i-tamanho');
-    if (info) info.textContent = Math.round(k * 100) + ' %' + (s < 1 ? '  (para caber, sai a ' + Math.round(k * s * 100) + ' %)' : '');
+    if (info) info.textContent = Math.round(k0 * 100) + ' %' + (s < 1 ? '  (para caber, sai a ' + Math.round(k0 * s * 100) + ' %)' : (k > k0 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
   }
 
   if (!MODELO) {
