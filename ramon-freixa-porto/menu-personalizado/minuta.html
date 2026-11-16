@@ -45,18 +45,18 @@
   .verso{ width:297mm; height:210mm; }
   /* símbolos dos cantos enquadrados como na minuta do dossier: círculo de 4,7 mm (= altura do FR original), centros a 15,6 × 8,0 e 281,2 × 202,7 mm */
   .canto{ width:4.7mm; transform:translate(-50%,-50%); }
-  .verso .col{ top:0; width:130mm; height:210mm; transform:translateX(-50%); text-align:center; }
+  .verso .col{ top:0; width:138mm; height:210mm; transform:translateX(-50%); text-align:center; }
   .verso .col.esq{ left:74.25mm; } .verso .col.dir{ left:222.75mm; }
   .verso .fit{ position:absolute; left:0; right:0; top:22mm; transform-origin:50% 0; }
   .verso h2{ margin:0; font-weight:500; font-size:3mm; line-height:4mm; letter-spacing:.08em; text-transform:uppercase; }
   .verso .data{ margin-top:1.2mm; font-weight:300; font-size:2.4mm; letter-spacing:.04em; color:var(--cinza); }
-  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.3mm; line-height:4.1mm; }   /* letra maior e linhas mais juntas (como no menu A5), para não ter de reduzir */
-  .verso .pratos .gap{ height:4mm; }                 /* linha em branco = separação de momentos */
+  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.3mm; line-height:3.9mm; }   /* letra maior e linhas mais juntas (como no menu A5), para não ter de reduzir */
+  .verso .pratos .gap{ height:3mm; }                 /* linha em branco = separação de momentos */
   .verso .pratos .momento{ font-size:2.6mm; letter-spacing:.2em; text-transform:uppercase; color:var(--cinza); }   /* linha começada por # = título do momento */
-  .verso .pratos .gap:has(+ .momento){ height:4mm; }   /* com título, basta meia separação */
+  .verso .pratos .gap:has(+ .momento){ height:3mm; }   /* com título, basta meia separação */
   .verso .pratos .ou{ font-style:italic; font-size:2.75mm; margin-bottom:1mm; }
   .verso .pratos .momento + .prato,.verso .pratos .momento + .desc{ margin-top:.8mm; }
-  .verso .pratos .desc{ font-style:italic; font-size:2.9mm; line-height:3.5mm; color:var(--cinza); margin:0 0 1.6mm; }   /* descrição do prato, como no menu-comida */
+  .verso .pratos .desc{ font-style:italic; font-size:2.75mm; line-height:3.3mm; color:var(--cinza); margin:0 0 1.2mm; }   /* descrição do prato, como no menu-comida */
   .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
   .verso .vinhos{ margin-top:9mm; font-weight:400; font-size:3.3mm; line-height:7mm; }
   .verso .vinhos .do{ font-weight:300; font-size:2.8mm; color:var(--cinza); }
