@@ -47,17 +47,20 @@
   .canto{ width:4.7mm; transform:translate(-50%,-50%); }
   .verso .col{ top:0; width:130mm; height:210mm; transform:translateX(-50%); text-align:center; }
   .verso .col.esq{ left:74.25mm; } .verso .col.dir{ left:222.75mm; }
-  .verso .fit{ position:absolute; left:0; right:0; top:31mm; transform-origin:50% 0; }
+  .verso .fit{ position:absolute; left:0; right:0; top:22mm; transform-origin:50% 0; }
   .verso h2{ margin:0; font-weight:500; font-size:3mm; line-height:4mm; letter-spacing:.08em; text-transform:uppercase; }
   .verso .data{ margin-top:1.2mm; font-weight:300; font-size:2.4mm; letter-spacing:.04em; color:var(--cinza); }
-  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.3mm; line-height:4.8mm; }   /* letra maior e linhas mais juntas (como no menu A5), para não ter de reduzir */
-  .verso .pratos .gap{ height:5.5mm; }                  /* linha em branco = separação de momentos */
+  .verso .pratos{ margin-top:6.5mm; font-weight:300; font-size:3.3mm; line-height:4.1mm; }   /* letra maior e linhas mais juntas (como no menu A5), para não ter de reduzir */
+  .verso .pratos .gap{ height:4mm; }                 /* linha em branco = separação de momentos */
   .verso .pratos .momento{ font-size:2.6mm; letter-spacing:.2em; text-transform:uppercase; color:var(--cinza); }   /* linha começada por # = título do momento */
   .verso .pratos .gap:has(+ .momento){ height:4mm; }   /* com título, basta meia separação */
+  .verso .pratos .ou{ font-style:italic; font-size:2.75mm; margin-bottom:1mm; }
+  .verso .pratos .momento + .prato,.verso .pratos .momento + .desc{ margin-top:.8mm; }
+  .verso .pratos .desc{ font-style:italic; font-size:2.9mm; line-height:3.5mm; color:var(--cinza); margin:0 0 1.6mm; }   /* descrição do prato, como no menu-comida */
   .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
   .verso .vinhos{ margin-top:9mm; font-weight:400; font-size:3.3mm; line-height:7mm; }
   .verso .vinhos .do{ font-weight:300; font-size:2.8mm; color:var(--cinza); }
-  .verso .fecho{ position:absolute; left:0; right:0; top:186mm; font-weight:300; font-style:italic; font-size:2.75mm; line-height:4.6mm; }
+  .verso .fecho{ position:absolute; left:0; right:0; top:189mm; font-weight:300; font-style:italic; font-size:2.75mm; line-height:4.6mm; }
   .vazio{ color:var(--cinza); }
   @media print{ body.com-painel .vazio{ display:none; } }   /* os campos por preencher ([Data], [Nome do menu]...) só aparecem no ecrã, nunca na impressão */
 
@@ -125,14 +128,14 @@
   // menus para pré-preencher (pratos como em menu-comida/menu-a5.html; linha em branco separa momentos)
   var PRESETS = {
     origem: {
-      pt: { menu:'Origem entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia\nCozido à portuguesa\nHomenagem ao Minho\nHorta e ria\nSantola de Matosinhos\n\n# A herança\nOs pães do pai de Ramón\n\n# Menu\nOstra e castanha\nBosque da Praia de Mira\nBacalhau Pinto Duarte\nou\nPombo de Cabeção e foie gras\n\n# Momento doce\nChocolate e medronho\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nSeleção de bombons e chocolates de origem' },
-      en: { menu:'Origin Between Two Seas', pratos:'# To begin\nAlgarve-style carrot\nPortuguese cozido\nA tribute to the Minho\nGarden and estuary\nMatosinhos spider crab\n\n# The legacy\nThe breads of Ramón’s father\n\n# Menu\nOyster and chestnut\nPraia de Mira forest\nPinto Duarte salt cod\nor\nCabeção pigeon and foie gras\n\n# Sweet moment\nChocolate and medronho\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nSelection of bonbons and single-origin chocolates' },
-      es: { menu:'Origen entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío\nCocido a la portuguesa\nHomenaje al Miño\nHuerta y ría\nCentolla de Matosinhos\n\n# La herencia\nLos panes del padre de Ramón\n\n# Menú\nOstra y castaña\nBosque de Praia de Mira\nBacalao Pinto Duarte\no\nPichón de Cabeção y foie gras\n\n# Momento dulce\nChocolate y madroño\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nSelección de bombones y chocolates de origen' }
+      pt: { menu:'Origem entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia | Tartelete de cenoura em escabeche, rábano picante e gengibre.\nCozido à portuguesa | Bolinho cremoso de cozido com flor de alho.\nHomenagem ao Minho | Rosa de truta marinada com as suas ovas e gel de “Jamón ibérico”.\nHorta e ria | Crocante de bimi, enguia fumada em brasas de carvalho e véu umami.\nSantola de Matosinhos | Guisado de santola com massa fina crocante, vinho do Porto branco seco e caviar Amur Oscietra.\n\n# A herança\n| Os pães do pai de Ramón (Josep María Freixa) e o seu acompanhamento: a nossa pimenta acabada de moer. Azeite Pôpa do Douro, flor de sal de Aveiro e manteiga de Marinhas.\n\n# Menu\nOstra e castanha | Ostra do Atlântico com beurre blanc, castanha e caviar Amur Beluga.\nBosque da Praia de Mira | Flan de trufa melanosporum com cogumelos da época, tutano, pinhões e folhas crocantes.\nBacalhau Pinto Duarte | Bacalhau confitado em baunilha com os seus sames, feijoca e pisto.\nou\nPombo de Cabeção e foie gras | Pombo da região de Cabeção assado em sarmentos de videira, com o seu civet, aipo-rábano, beterraba e laranja amarga.\n\n# Momento doce\nChocolate e medronho | Barquilho e chocolate de origem Brasil-Macaé, coração de medronho, citrinos e mel de pinheiro.\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nSeleção de bombons e chocolates de origem' },
+      en: { menu:'Origin Between Two Seas', pratos:'# To begin\nAlgarve-style carrot | Carrot escabeche tartlet, horseradish and ginger.\nPortuguese cozido | Creamy cozido fritter with garlic flower.\nA tribute to the Minho | Marinated trout rose with its roe and “Jamón ibérico” gel.\nGarden and estuary | Crispy bimi, eel smoked over oak embers and an umami veil.\nMatosinhos spider crab | Spider crab stew with crispy noodles, Dry White Port and Amur Oscietra caviar.\n\n# The legacy\n| The breads of Ramón’s father (Josep María Freixa) and their accompaniment: our freshly ground pepper. Pôpa olive oil from the Douro, Aveiro fleur de sel and Marinhas butter.\n\n# Menu\nOyster and chestnut | Atlantic oyster with beurre blanc, chestnut and Amur Beluga caviar.\nPraia de Mira forest | Melanosporum truffle flan with seasonal mushrooms, bone marrow, pine nuts and crispy leaves.\nPinto Duarte salt cod | Vanilla-confit salt cod with its tripe, butter beans and pisto.\nor\nCabeção pigeon and foie gras | Pigeon from the Cabeção region roasted over vine shoots, with its civet, celeriac, beetroot and bitter orange.\n\n# Sweet moment\nChocolate and medronho | Wafer and Brazil-Macaé origin chocolate, medronho (strawberry tree fruit) heart, citrus and pine honey.\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nSelection of bonbons and single-origin chocolates' },
+      es: { menu:'Origen entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío | Tartaleta de zanahoria en escabeche, rábano picante y jengibre.\nCocido a la portuguesa | Buñuelo cremoso de cocido con flor de ajo.\nHomenaje al Miño | Rosa de trucha marinada con sus huevas y gel de jamón ibérico.\nHuerta y ría | Crujiente de bimi, anguila ahumada a las brasas de roble y velo umami.\nCentolla de Matosinhos | Guiso de centollo con fideos crujientes con Dry White Port y caviar Amur Oscietra.\n\n# La herencia\n| Los panes del padre de Ramón (Josep María Freixa) y su acompañamiento: nuestra pimienta recién molida. Aceite Pôpa do Douro, flor de sal de Aveiro y mantequilla de Marinhas.\n\n# Menú\nOstra y castaña | Ostra del Atlántico con beurre blanc, castaña y caviar Amur Beluga.\nBosque de Praia de Mira | Flan de trufa melanosporum con setas de temporada, tuétano, piñones y hojas crujientes.\nBacalao Pinto Duarte | Bacalao confitado a la vainilla con sus callos, judiones y pisto.\no\nPichón de Cabeção y foie gras | Pichón de la región de Cabeção a los sarmientos con su civet, apionabo, remolacha y naranja amarga.\n\n# Momento dulce\nChocolate y madroño | Barquillo y chocolate de origen Brasil-Macaé, corazón de madroño, cítricos y miel de pino.\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nSelección de bombones y chocolates de origen' }
     },
     descoberta: {
-      pt: { menu:'Descoberta entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia\nCozido à portuguesa\nHomenagem ao Minho\nHorta e ria\nSantola de Matosinhos\n\n# A herança\nOs pães do pai de Ramón\n\n# Menu\nOstra e castanha\nBosque da Praia de Mira\nMar e montanha\nBacalhau Pinto Duarte\nPombo de Cabeção e foie gras\n\n# Momento doce\n“Queijo Serra da Estrela”\nPâté en croûte\nChocolate e medronho\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nSeleção de bombons e chocolates de origem' },
-      en: { menu:'Discovery Between Two Seas', pratos:'# To begin\nAlgarve-style carrot\nPortuguese cozido\nA tribute to the Minho\nGarden and estuary\nMatosinhos spider crab\n\n# The legacy\nThe breads of Ramón’s father\n\n# Menu\nOyster and chestnut\nPraia de Mira forest\nSea and mountain\nPinto Duarte salt cod\nCabeção pigeon and foie gras\n\n# Sweet moment\n“Queijo Serra da Estrela”\nPâté en croûte\nChocolate and medronho\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nSelection of bonbons and single-origin chocolates' },
-      es: { menu:'Descubrimiento entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío\nCocido a la portuguesa\nHomenaje al Miño\nHuerta y ría\nCentolla de Matosinhos\n\n# La herencia\nLos panes del padre de Ramón\n\n# Menú\nOstra y castaña\nBosque de Praia de Mira\nMar y montaña\nBacalao Pinto Duarte\nPichón de Cabeção y foie gras\n\n# Momento dulce\nQueso Serra da Estrela\nPâté en croûte\nChocolate y madroño\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nSelección de bombones y chocolates de origen' }
+      pt: { menu:'Descoberta entre Dois Mares', pratos:'# Para começar\nCenoura à algarvia | Tartelete de cenoura em escabeche, rábano picante e gengibre.\nCozido à portuguesa | Bolinho cremoso de cozido com flor de alho.\nHomenagem ao Minho | Rosa de truta marinada com as suas ovas e gel de “Jamón ibérico”.\nHorta e ria | Crocante de bimi, enguia fumada em brasas de carvalho e véu umami.\nSantola de Matosinhos | Guisado de santola com massa fina crocante, vinho do Porto branco seco e caviar Amur Oscietra.\n\n# A herança\n| Os pães do pai de Ramón (Josep María Freixa) e o seu acompanhamento: a nossa pimenta acabada de moer. Azeite Pôpa do Douro, flor de sal de Aveiro e manteiga de Marinhas.\n\n# Menu\nOstra e castanha | Ostra do Atlântico com beurre blanc, castanha e caviar Amur Beluga.\nBosque da Praia de Mira | Flan de trufa melanosporum com cogumelos da época, tutano, pinhões e folhas crocantes.\nMar e montanha | Lavagante do Atlântico com dueto de molhos e as suas liliáceas.\nBacalhau Pinto Duarte | Bacalhau confitado em baunilha com os seus sames, feijoca e pisto.\nPombo de Cabeção e foie gras | Pombo da região de Cabeção assado em sarmentos de videira, com o seu civet, aipo-rábano, beterraba e laranja amarga.\n\n# Momento doce\n“Queijo Serra da Estrela” | Binómio de “Queijo Serra da Estrela”, creme de alcachofra e as suas folhas, bolo macio de pistácio e endívia assada.\nPâté en croûte | Abóbora e “Pera Rocha do Oeste”, chantilly de endro e sidra de pera.\nChocolate e medronho | Barquilho e chocolate de origem Brasil-Macaé, coração de medronho, citrinos e mel de pinheiro.\n\n# Epílogo doce\nPastel de nata\nPudim Abade de Priscos\nPâte de fruit de água de tomate\nPassa de ananás e manjericão\nSeleção de bombons e chocolates de origem' },
+      en: { menu:'Discovery Between Two Seas', pratos:'# To begin\nAlgarve-style carrot | Carrot escabeche tartlet, horseradish and ginger.\nPortuguese cozido | Creamy cozido fritter with garlic flower.\nA tribute to the Minho | Marinated trout rose with its roe and “Jamón ibérico” gel.\nGarden and estuary | Crispy bimi, eel smoked over oak embers and an umami veil.\nMatosinhos spider crab | Spider crab stew with crispy noodles, Dry White Port and Amur Oscietra caviar.\n\n# The legacy\n| The breads of Ramón’s father (Josep María Freixa) and their accompaniment: our freshly ground pepper. Pôpa olive oil from the Douro, Aveiro fleur de sel and Marinhas butter.\n\n# Menu\nOyster and chestnut | Atlantic oyster with beurre blanc, chestnut and Amur Beluga caviar.\nPraia de Mira forest | Melanosporum truffle flan with seasonal mushrooms, bone marrow, pine nuts and crispy leaves.\nSea and mountain | Atlantic lobster with a duet of sauces and its alliums.\nPinto Duarte salt cod | Vanilla-confit salt cod with its tripe, butter beans and pisto.\nCabeção pigeon and foie gras | Pigeon from the Cabeção region roasted over vine shoots, with its civet, celeriac, beetroot and bitter orange.\n\n# Sweet moment\n“Queijo Serra da Estrela” | “Queijo Serra da Estrela” in two ways, artichoke cream and its leaves, soft pistachio sponge and roasted endive.\nPâté en croûte | Pumpkin and “Pera Rocha do Oeste”, dill Chantilly and pear cider.\nChocolate and medronho | Wafer and Brazil-Macaé origin chocolate, medronho (strawberry tree fruit) heart, citrus and pine honey.\n\n# Sweet epilogue\nPastel de nata\nAbade de Priscos pudding\nTomato water pâte de fruit\nDried pineapple and basil\nSelection of bonbons and single-origin chocolates' },
+      es: { menu:'Descubrimiento entre Dos Mares', pratos:'# Empezamos\nZanahoria al estilo algarvío | Tartaleta de zanahoria en escabeche, rábano picante y jengibre.\nCocido a la portuguesa | Buñuelo cremoso de cocido con flor de ajo.\nHomenaje al Miño | Rosa de trucha marinada con sus huevas y gel de jamón ibérico.\nHuerta y ría | Crujiente de bimi, anguila ahumada a las brasas de roble y velo umami.\nCentolla de Matosinhos | Guiso de centollo con fideos crujientes con Dry White Port y caviar Amur Oscietra.\n\n# La herencia\n| Los panes del padre de Ramón (Josep María Freixa) y su acompañamiento: nuestra pimienta recién molida. Aceite Pôpa do Douro, flor de sal de Aveiro y mantequilla de Marinhas.\n\n# Menú\nOstra y castaña | Ostra del Atlántico con beurre blanc, castaña y caviar Amur Beluga.\nBosque de Praia de Mira | Flan de trufa melanosporum con setas de temporada, tuétano, piñones y hojas crujientes.\nMar y montaña | Bogavante del Atlántico con dueto de salsas y sus liliáceas.\nBacalao Pinto Duarte | Bacalao confitado a la vainilla con sus callos, judiones y pisto.\nPichón de Cabeção y foie gras | Pichón de la región de Cabeção a los sarmientos con su civet, apionabo, remolacha y naranja amarga.\n\n# Momento dulce\nQueso Serra da Estrela | Binomio de queso Serra da Estrela, crema de alcachofa y sus hojas, bizcocho tierno de pistacho y endivia asada.\nPâté en croûte | Calabaza y pera rocha del Oeste, chantilly de eneldo y sidra de pera.\nChocolate y madroño | Barquillo y chocolate de origen Brasil-Macaé, corazón de madroño, cítricos y miel de pino.\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nSelección de bombones y chocolates de origen' }
     }
   };
   var VAZIO = { menu:'[Nome do menu]', data:'[Data]', pratos:'[Pratos degustados]', intro:'' };
@@ -163,7 +166,15 @@
     dData.textContent = dados.data || VAZIO.data; dData.classList.toggle('vazio', !dados.data);
     dPratos.innerHTML = '';
     if (!dados.pratos.trim()) el('div', 'vazio', dPratos, VAZIO.pratos);
-    else linhas(dados.pratos.trim()).forEach(function(l){ if (!l) el('div', 'gap', dPratos); else if (l[0] === '#') el('div', 'momento', dPratos, l.replace(/^#+\s*/, '')); else el('div', '', dPratos, l); });
+    else linhas(dados.pratos.trim()).forEach(function(l){
+      if (!l) el('div', 'gap', dPratos);
+      else if (l[0] === '#') el('div', 'momento', dPratos, l.replace(/^#+\s*/, ''));
+      else {   // "Prato | descrição" (como no menu-comida); "| texto" = só descrição
+        var p = l.split('|'), nome = p[0].trim(), desc = p.slice(1).join('|').trim();
+        if (nome) el('div', ['ou', 'or', 'o'].indexOf(nome.toLowerCase()) >= 0 && !desc ? 'ou' : 'prato', dPratos, nome);
+        if (desc) el('div', 'desc', dPratos, desc);
+      }
+    });
     hHarm.textContent = dados.harm;
     dIntro.textContent = dados.intro; dIntro.style.display = dados.intro.trim() ? '' : 'none';
     dVinhos.style.marginTop = dados.intro.trim() ? '' : '6.5mm';
@@ -180,19 +191,20 @@
     var k0 = (parseFloat(dados.tamanho) || 100) / 100, mmpx = sh.getBoundingClientRect().height / 210, s = 1, k = k0;
     function medir(z){
       var r = 1.25;
-      [[fd, 196], [fe, 180]].forEach(function(c){
-        c[0].style.transform = 'none'; c[0].style.zoom = z; c[0].style.top = (31 / z) + 'mm';   // o zoom também escala o "top": compensar para começar sempre a 31 mm
-        r = Math.min(r, (c[1] - 31) / (c[0].getBoundingClientRect().height / mmpx));
+      [[fd, 196], [fe, 184]].forEach(function(c){
+        c[0].style.transform = 'none'; c[0].style.zoom = z; c[0].style.top = (22 / z) + 'mm';   // o zoom também escala o "top": compensar para começar sempre a 22 mm
+        r = Math.min(r, (c[1] - 22) / (c[0].getBoundingClientRect().height / mmpx));
       });
       return r;
     }
-    var r = medir(k0);
-    if (r > 1) {   // cresce com zoom (as linhas voltam a partir na largura da coluna); confirma que continua a caber
-      for (var g = Math.min(r, 1.25); g > 1.005; g -= 0.02) { k = k0 * g; if (medir(k) >= 1) break; }
-      if (g <= 1.005) { k = k0; medir(k0); }
-    } else if (r < 1) { s = r; [fd, fe].forEach(function(e){ e.style.transform = 'scale(' + s.toFixed(3) + ')'; }); }
+    // procura a maior letra que cabe (entre 40 % e 125 % do tamanho escolhido), sempre com zoom:
+    // as linhas voltam a partir na largura toda da coluna, por isso cabe mais texto com letra maior
+    var lo = 0.4, hi = 1.25;
+    if (medir(k0 * hi) >= 1) lo = hi;
+    else for (var i = 0; i < 12; i++) { var m = (lo + hi) / 2; if (medir(k0 * m) >= 1) lo = m; else hi = m; }
+    k = k0 * lo; medir(k);
     var info = document.getElementById('i-tamanho');
-    if (info) info.textContent = Math.round(k0 * 100) + ' %' + (s < 1 ? '  (para caber, sai a ' + Math.round(k0 * s * 100) + ' %)' : (k > k0 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
+    if (info) info.textContent = Math.round(k0 * 100) + ' %' + (lo < 0.995 ? '  (para caber, sai a ' + Math.round(k * 100) + ' %)' : (lo > 1.005 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
   }
 
   if (!MODELO) {
@@ -206,7 +218,7 @@
       '<label>Tamanho da letra <small id="i-tamanho">100 %</small></label><input id="f-tamanho" type="range" min="70" max="130" step="5">' +
       '<label>Nome do menu</label><input id="f-menu" placeholder="Ex.: Origem entre Dois Mares">' +
       '<label>Data <small>(opcional)</small></label><input id="f-data" placeholder="Ex.: 3 de novembro de 2026">' +
-      '<label>Pratos degustados <small>— um por linha; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
+      '<label>Pratos degustados <small>— um por linha: Prato | descrição; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
       '<label>Título da harmonização</label><input id="f-harm">' +
       '<label>Texto da harmonização <small>(opcional, em itálico)</small></label><textarea id="f-intro" rows="3"></textarea>' +
       '<label>Vinhos <small>— um por linha: Vinho Ano | D.O.</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
