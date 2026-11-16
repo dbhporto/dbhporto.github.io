@@ -144,9 +144,10 @@
   if (!MODELO) { try { var g = JSON.parse(localStorage.getItem('rfp-minuta') || 'null'); if (g) Object.assign(dados, g); } catch (e) {} }
   // se o menu veio do pré-preenchimento e os pratos não foram mexidos à mão, usar sempre a versão atual dos pratos
   // (assim uma alteração aos menus neste ficheiro aparece logo, sem ter de voltar a escolher o menu)
-  if (!dados.preset && dados.menu) {   // menus guardados antes desta versão: reconhecer pelo nome do menu
+  if (dados.menu) {   // reconhecer sempre o menu pelo nome (Origem/Descoberta, em qualquer língua)
     Object.keys(PRESETS).forEach(function(id){ ['pt', 'en', 'es'].forEach(function(l){ if (PRESETS[id][l].menu === dados.menu) dados.preset = id; }); });
   }
+  if (dados.pratos && dados.pratos.indexOf('|') < 0) dados.pratosEditados = false;   // pratos guardados no formato antigo (sem descrições): atualizar
   if (dados.preset && !dados.pratosEditados && PRESETS[dados.preset]) {
     var pa = PRESETS[dados.preset][dados.lingua] || PRESETS[dados.preset].pt; dados.menu = pa.menu; dados.pratos = pa.pratos;
   }
