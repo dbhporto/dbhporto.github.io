@@ -59,7 +59,7 @@
   .verso .pratos .momento + .prato,.verso .pratos .momento + .desc{ margin-top:.8mm; }
   .verso .pratos .desc{ font-style:italic; font-size:2.75mm; line-height:3.3mm; color:var(--cinza); margin:0 0 1.2mm; }   /* descrição do prato, como no menu-comida */
   .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
-  .verso .esq h2{ margin-top:6mm; }   /* título da harmonização um pouco abaixo do do menu (pedido do Filipe) */
+  .verso .esq h2{ margin-top:10mm; }   /* título da harmonização um pouco abaixo do do menu (pedido do Filipe) */
   .verso .vinhos{ margin-top:6.5mm; }   /* vinhos com a mesma letra, tamanho e cor dos pratos (classe "pratos"); a nota (ex.: Bacalhau) como a descrição */
   .verso .vinhos .prato{ margin-bottom:3.4mm; }
   .verso .vinhos .prato:has(+ .desc){ margin-bottom:0; }
@@ -282,10 +282,10 @@
     if (medir(k0 * hi) >= 1) lo = hi;
     else for (var i = 0; i < 12; i++) { var m = (lo + hi) / 2; if (medir(k0 * m) >= 1) lo = m; else hi = m; }
     k = k0 * lo; medir(k);
-    // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem até ficarem centrados nos 70 mm (acima do meio, pedido do Filipe)
+    // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem até ficarem centrados nos 75 mm (acima do meio, pedido do Filipe)
     var y0 = sh.getBoundingClientRect().top, ini = dados.intro.trim() ? dIntro : dVinhos;
     var topo = (ini.getBoundingClientRect().top - y0) / mmpx, fim = (dVinhos.getBoundingClientRect().bottom - y0) / mmpx;
-    var desce = Math.max(0, 70 - (fim - topo) / 2 - topo);
+    var desce = Math.max(0, 75 - (fim - topo) / 2 - topo);
     if (desce) ini.style.marginTop = ((dados.intro.trim() ? 6.5 : 4.5) + desce / k) + 'mm';   // margem normal (6,5 mm do texto; 4,5 mm dos vinhos) + o que falta
     var info = document.getElementById('i-tamanho');
     if (info) info.textContent = Math.round(k0 * 100) + ' %' + (lo < 0.995 ? '  (para caber, sai a ' + Math.round(k * 100) + ' %)' : (lo > 1.005 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
