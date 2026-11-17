@@ -281,10 +281,10 @@
     if (medir(k0 * hi) >= 1) lo = hi;
     else for (var i = 0; i < 12; i++) { var m = (lo + hi) / 2; if (medir(k0 * m) >= 1) lo = m; else hi = m; }
     k = k0 * lo; medir(k);
-    // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem para o meio da página
+    // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem até ficarem centrados nos 88 mm (um pouco acima do meio, pedido do Filipe)
     var y0 = sh.getBoundingClientRect().top, ini = dados.intro.trim() ? dIntro : dVinhos;
     var topo = (ini.getBoundingClientRect().top - y0) / mmpx, fim = (dVinhos.getBoundingClientRect().bottom - y0) / mmpx;
-    var desce = Math.max(0, (210 - (fim - topo)) / 2 - topo);
+    var desce = Math.max(0, 88 - (fim - topo) / 2 - topo);
     if (desce) ini.style.marginTop = ((dados.intro.trim() ? 6.5 : 4.5) + desce / k) + 'mm';   // margem normal (6,5 mm do texto; 4,5 mm dos vinhos) + o que falta
     var info = document.getElementById('i-tamanho');
     if (info) info.textContent = Math.round(k0 * 100) + ' %' + (lo < 0.995 ? '  (para caber, sai a ' + Math.round(k * 100) + ' %)' : (lo > 1.005 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
