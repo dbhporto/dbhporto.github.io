@@ -237,10 +237,27 @@
     dIntro.style.marginTop = '';
     dVinhos.style.marginTop = dados.intro.trim() ? '' : '4.5mm';   // sem texto: à mesma distância do título que os pratos
     dVinhos.innerHTML = '';
-    linhas(dados.vinhos.trim()).filter(Boolean).forEach(function(l){   // "Vinho | nota", como "Prato | descrição"
-      var p = l.split('|'), nota = p.slice(1).join('|').trim();
-      el('div', 'prato', dVinhos, p[0].trim());
-      if (nota) el('div', 'desc', dVinhos, nota);
+    // "Vinho | prato": se todos os vinhos indicam um prato do menu, cada vinho fica à altura desse prato,
+    // com os títulos de momento do menu (Para começar, Menu...) e sem o nome do prato; senão, lista com a nota por baixo
+    var itens = linhas(dados.vinhos.trim()).filter(Boolean).map(function(l){ var p = l.split('|'); return { w:p[0].trim(), nota:p.slice(1).join('|').trim() }; });
+    var pratosEls = [].slice.call(dPratos.querySelectorAll('.prato, .momento'));
+    function achar(n){   // o prato com esse nome; um título de momento (ex.: "Para começar") = o primeiro prato desse momento
+      var e = pratosEls.filter(function(x){ return x.textContent.trim() === n; })[0];
+      while (e && !e.classList.contains('prato')) e = e.nextElementSibling;
+      return e;
+    }
+    var alinhado = itens.length > 0 && itens.every(function(it){ return it.nota && achar(it.nota); });
+    if (alinhado) {
+      var secAnt = null;
+      itens.forEach(function(it){
+        var pe = achar(it.nota), sec = pe;
+        while (sec && !sec.classList.contains('momento')) sec = sec.previousElementSibling;
+        if (sec && sec !== secAnt) { el('div', 'momento', dVinhos, sec.textContent)._alvo = sec; secAnt = sec; }
+        el('div', 'prato', dVinhos, it.w)._alvo = pe;
+      });
+    } else itens.forEach(function(it){
+      el('div', 'prato', dVinhos, it.w);
+      if (it.nota) el('div', 'desc', dVinhos, it.nota);
     });
     dFecho.textContent = ''; linhas(dados.fecho).forEach(function(l, i){ if (i) el('br', '', dFecho); dFecho.appendChild(document.createTextNode(l)); });
     // tamanho da letra escolhido no painel (zoom: o texto volta a partir as linhas na largura da coluna);
@@ -262,11 +279,20 @@
     if (medir(k0 * hi) >= 1) lo = hi;
     else for (var i = 0; i < 12; i++) { var m = (lo + hi) / 2; if (medir(k0 * m) >= 1) lo = m; else hi = m; }
     k = k0 * lo; medir(k);
-    // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem para o meio da página
-    var y0 = sh.getBoundingClientRect().top, ini = dados.intro.trim() ? dIntro : dVinhos;
-    var topo = (ini.getBoundingClientRect().top - y0) / mmpx, fim = (dVinhos.getBoundingClientRect().bottom - y0) / mmpx;
-    var desce = Math.max(0, (210 - (fim - topo)) / 2 - topo);
-    if (desce) ini.style.marginTop = ((dados.intro.trim() ? 6.5 : 4.5) + desce / k) + 'mm';   // margem normal (6,5 mm do texto; 4,5 mm dos vinhos) + o que falta
+    if (alinhado) {   // cada título e cada vinho à mesma altura do título/prato correspondente no menu (as duas colunas têm a mesma letra)
+      dVinhos.style.marginTop = '0mm';
+      [].forEach.call(dVinhos.children, function(e){ e.style.marginTop = '0mm'; e.style.marginBottom = '0mm'; });
+      [].forEach.call(dVinhos.children, function(e){
+        var d = (e._alvo.getBoundingClientRect().top - e.getBoundingClientRect().top) / mmpx;
+        if (d > 0) e.style.marginTop = (d / k) + 'mm';
+      });
+    } else {
+      // harmonização: o título fica em cima (como o do menu); o texto e os vinhos descem para o meio da página
+      var y0 = sh.getBoundingClientRect().top, ini = dados.intro.trim() ? dIntro : dVinhos;
+      var topo = (ini.getBoundingClientRect().top - y0) / mmpx, fim = (dVinhos.getBoundingClientRect().bottom - y0) / mmpx;
+      var desce = Math.max(0, (210 - (fim - topo)) / 2 - topo);
+      if (desce) ini.style.marginTop = ((dados.intro.trim() ? 6.5 : 4.5) + desce / k) + 'mm';   // margem normal (6,5 mm do texto; 4,5 mm dos vinhos) + o que falta
+    }
     var info = document.getElementById('i-tamanho');
     if (info) info.textContent = Math.round(k0 * 100) + ' %' + (lo < 0.995 ? '  (para caber, sai a ' + Math.round(k * 100) + ' %)' : (lo > 1.005 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
   }
@@ -287,7 +313,7 @@
       '<label>Pratos degustados <small>— um por linha: Prato | descrição; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
       '<label>Título da harmonização</label><input id="f-harm">' +
       '<label>Texto da harmonização <small>(opcional, em itálico)</small></label><textarea id="f-intro" rows="3"></textarea>' +
-      '<label>Vinhos <small>— um por linha: Vinho Ano | nota (opcional, em itálico como as descrições)</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
+      '<label>Vinhos <small>— um por linha: Vinho Ano | prato que acompanha (o vinho fica à altura desse prato; o nome do prato não sai)</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
       '<label>Mensagem final</label><textarea id="f-fecho" rows="2"></textarea>' +
       '<div class="bts"><button id="b-print">Imprimir</button><button class="sec" id="b-limpar">Limpar</button></div>';
     CAMPOS.forEach(function(k){
