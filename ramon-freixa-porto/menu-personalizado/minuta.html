@@ -141,27 +141,36 @@
     }
   };
   // harmonizações para pré-preencher (Word "Harmonização (002)", 17/11/2026; nomes e anos acertados pela carta de vinhos)
-  // "| bacalhau" / "| pombo": no Origem, o vinho depende do prato principal escolhido
+  // "| prato": o prato que o vinho acompanha (sai por baixo do vinho, como a descrição dos pratos)
+  // no Origem, os vinhos "| bacalhau" e "| pombo" dependem do prato principal escolhido
   var HARMS = {
     origem: {
       base: { nome:{ pt:'Harmonização Origem', en:'Origin Pairing', es:'Armonía Origen' }, vinhos:[
-        'Murganheira Vintage 2016', 'Santiago & Nuno Mira do Ó Sou 2023', 'Casal das Aires Vinhas Velhas 2020', 'Cortes de Cima Furnas 2021',
-        'Quinta da Perdonda Branco da Estrela 2020 | bacalhau', 'Giz Vinha das Cavaleiras 2021 | pombo', 'Quinta do Portal Moscatel Reserva 2007' ] },
+        'Murganheira Vintage 2016 | comecar', 'Santiago & Nuno Mira do Ó Sou 2023 | ostra', 'Casal das Aires Vinhas Velhas 2020 | bosque', 'Cortes de Cima Furnas 2021',
+        'Quinta da Perdonda Branco da Estrela 2020 | bacalhau', 'Giz Vinha das Cavaleiras 2021 | pombo', 'Quinta do Portal Moscatel Reserva 2007 | chocolate' ] },
       premium: { nome:{ pt:'Harmonização Origem Premium', en:'Origin Premium Pairing', es:'Armonía Origen Premium' }, vinhos:[
-        'Camille Bonville Blanc des Blancs Grand Cru NV', 'Mixtura 2021', 'Reta M2 Campix 2023', 'Arribas Wine Company Quilómetro 2021',
-        'Lusus Naturae 2024 | bacalhau', 'Monte Cascas Vinha do Quinto 2016 | pombo', 'Niepoort Moscatel 20 Anos' ] }
+        'Camille Bonville Blanc des Blancs Grand Cru NV | comecar', 'Mixtura 2021 | ostra', 'Reta M2 Campix 2023 | bosque', 'Arribas Wine Company Quilómetro 2021',
+        'Lusus Naturae 2024 | bacalhau', 'Monte Cascas Vinha do Quinto 2016 | pombo', 'Niepoort Moscatel 20 Anos | chocolate' ] }
     },
     descoberta: {
       base: { nome:{ pt:'Harmonização Descoberta', en:'Discovery Pairing', es:'Armonía Descubrimiento' }, vinhos:[
-        'Murganheira Vintage 2016', 'Santiago & Nuno Mira do Ó Sou 2023', 'Casal das Aires Vinhas Velhas 2020', 'Cortes de Cima Furnas 2021',
-        'Quinta da Perdonda Branco da Estrela 2020', 'Giz Vinha das Cavaleiras 2021', 'H.M. Borges 15 Anos Verdelho', 'Quinta do Portal Moscatel Reserva 2007' ] },
+        'Murganheira Vintage 2016 | comecar', 'Santiago & Nuno Mira do Ó Sou 2023 | ostra', 'Casal das Aires Vinhas Velhas 2020 | bosque', 'Cortes de Cima Furnas 2021 | marmontanha',
+        'Quinta da Perdonda Branco da Estrela 2020 | bacalhau', 'Giz Vinha das Cavaleiras 2021 | pombo', 'H.M. Borges 15 Anos Verdelho | queijo', 'Quinta do Portal Moscatel Reserva 2007 | chocolate' ] },
       premium: { nome:{ pt:'Harmonização Descoberta Premium', en:'Discovery Premium Pairing', es:'Armonía Descubrimiento Premium' }, vinhos:[
-        'Camille Bonville Blanc des Blancs Grand Cru NV', 'Mixtura 2021', 'Reta M2 Campix 2023', 'Arribas Wine Company Quilómetro 2021',
-        'Lusus Naturae 2024', 'Monte Cascas Vinha do Quinto 2016', 'D’Oliveiras 15 Anos Verdelho', 'Niepoort Moscatel 20 Anos' ] }
+        'Camille Bonville Blanc des Blancs Grand Cru NV | comecar', 'Mixtura 2021 | ostra', 'Reta M2 Campix 2023 | bosque', 'Arribas Wine Company Quilómetro 2021 | marmontanha',
+        'Lusus Naturae 2024 | bacalhau', 'Monte Cascas Vinha do Quinto 2016 | pombo', 'D’Oliveiras 15 Anos Verdelho | queijo', 'Niepoort Moscatel 20 Anos | chocolate' ] }
     }
   };
-  var PRATO = { pt:{ bacalhau:'Bacalhau', pombo:'Pombo' }, en:{ bacalhau:'Salt cod', pombo:'Pigeon' }, es:{ bacalhau:'Bacalao', pombo:'Pichón' } };
-  // Origem: bacalhau OU pombo; "ambos" deixa os dois pratos (com "ou") e os dois vinhos, cada um com o nome do prato
+  // nomes como nos pratos (PRESETS)
+  var PRATO = {
+    pt:{ comecar:'Para começar', ostra:'Ostra e castanha', bosque:'Bosque da Praia de Mira', marmontanha:'Mar e montanha', bacalhau:'Bacalhau Pinto Duarte',
+         pombo:'Pombo de Cabeção e foie gras', queijo:'“Queijo Serra da Estrela”', chocolate:'Chocolate e medronho' },
+    en:{ comecar:'To begin', ostra:'Oyster and chestnut', bosque:'Praia de Mira forest', marmontanha:'Sea and mountain', bacalhau:'Pinto Duarte salt cod',
+         pombo:'Cabeção pigeon and foie gras', queijo:'“Queijo Serra da Estrela”', chocolate:'Chocolate and medronho' },
+    es:{ comecar:'Empezamos', ostra:'Ostra y castaña', bosque:'Bosque de Praia de Mira', marmontanha:'Mar y montaña', bacalhau:'Bacalao Pinto Duarte',
+         pombo:'Pichón de Cabeção y foie gras', queijo:'Queso Serra da Estrela', chocolate:'Chocolate y madroño' }
+  };
+  // Origem: bacalhau OU pombo; "ambos" deixa os dois pratos (com "ou") e os dois vinhos
   function pratosDe(id, l, escolha){
     var t = (PRESETS[id][l] || PRESETS[id].pt).pratos;
     if (!escolha || escolha === 'ambos') return t;
@@ -172,12 +181,11 @@
   }
   function vinhosDe(id, nivel, l, escolha){
     var h = HARMS[id] && HARMS[id][nivel]; if (!h) return null;
-    var vs = [];
+    var vs = [], nomes = PRATO[l] || PRATO.pt;
     h.vinhos.forEach(function(v){
-      var p = v.split('|'), w = p[0].trim(), so = (p[1] || '').trim();
-      if (!so) vs.push(w);
-      else if (!escolha || escolha === 'ambos') vs.push(w + ' | ' + PRATO[l][so]);
-      else if (so === escolha) vs.push(w);
+      var p = v.split('|'), w = p[0].trim(), pr = (p[1] || '').trim();
+      if (id === 'origem' && escolha && escolha !== 'ambos' && (pr === 'bacalhau' || pr === 'pombo') && pr !== escolha) return;   // vinho do outro prato
+      vs.push(pr ? w + ' | ' + nomes[pr] : w);
     });
     return { harm:h.nome[l] || h.nome.pt, vinhos:vs.join('\n') };
   }
