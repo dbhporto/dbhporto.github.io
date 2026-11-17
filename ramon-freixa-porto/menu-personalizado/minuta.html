@@ -59,8 +59,9 @@
   .verso .pratos .momento + .prato,.verso .pratos .momento + .desc{ margin-top:.8mm; }
   .verso .pratos .desc{ font-style:italic; font-size:2.75mm; line-height:3.3mm; color:var(--cinza); margin:0 0 1.2mm; }   /* descrição do prato, como no menu-comida */
   .verso .intro{ margin-top:6.5mm; font-weight:300; font-style:italic; font-size:2.95mm; line-height:4.9mm; white-space:pre-line; }
-  .verso .vinhos{ margin-top:9mm; font-weight:400; font-size:3.3mm; line-height:7mm; }
-  .verso .vinhos .do{ font-weight:300; font-size:2.8mm; color:var(--cinza); }
+  .verso .vinhos{ margin-top:6.5mm; }   /* vinhos com a mesma letra, tamanho e cor dos pratos (classe "pratos"); a nota (ex.: Bacalhau) como a descrição */
+  .verso .vinhos .prato{ margin-bottom:1.2mm; }
+  .verso .vinhos .prato:has(+ .desc){ margin-bottom:0; }
   .verso .fecho{ position:absolute; left:0; right:0; top:193mm; font-weight:300; font-style:italic; font-size:2.75mm; line-height:4.6mm; }
   .vazio{ color:var(--cinza); }
   @media print{ body.com-painel .vazio{ display:none; } }   /* os campos por preencher ([Data], [Nome do menu]...) só aparecem no ecrã, nunca na impressão */
@@ -205,7 +206,7 @@
   var esq = el('div', 'abs col esq', sh), dir = el('div', 'abs col dir', sh);
   var fd = el('div', 'fit', esq), fe = el('div', 'fit', dir);   // harmonização à esquerda, menu à direita
   var hMenu = el('h2', '', fe), dData = el('div', 'data', fe), dPratos = el('div', 'pratos', fe);
-  var hHarm = el('h2', '', fd), dIntro = el('div', 'intro', fd), dVinhos = el('div', 'vinhos', fd);
+  var hHarm = el('h2', '', fd), dIntro = el('div', 'intro', fd), dVinhos = el('div', 'pratos vinhos', fd);
   var dFecho = el('div', 'fecho', dir);
 
   function linhas(txt){ return txt.replace(/\r/g, '').split('\n').map(function(l){ return l.trim(); }); }
@@ -225,11 +226,12 @@
     });
     hHarm.textContent = dados.harm;
     dIntro.textContent = dados.intro; dIntro.style.display = dados.intro.trim() ? '' : 'none';
-    dVinhos.style.marginTop = dados.intro.trim() ? '' : '6.5mm';
+    dVinhos.style.marginTop = dados.intro.trim() ? '' : '4.5mm';   // sem texto: à mesma distância do título que os pratos
     dVinhos.innerHTML = '';
-    linhas(dados.vinhos.trim()).filter(Boolean).forEach(function(l){
-      var p = l.split('|'), d = el('div', '', dVinhos, p[0].trim());
-      if (p[1] && p[1].trim()) el('span', 'do', d, ' - ' + p[1].trim());
+    linhas(dados.vinhos.trim()).filter(Boolean).forEach(function(l){   // "Vinho | nota", como "Prato | descrição"
+      var p = l.split('|'), nota = p.slice(1).join('|').trim();
+      el('div', 'prato', dVinhos, p[0].trim());
+      if (nota) el('div', 'desc', dVinhos, nota);
     });
     dFecho.textContent = ''; linhas(dados.fecho).forEach(function(l, i){ if (i) el('br', '', dFecho); dFecho.appendChild(document.createTextNode(l)); });
     // tamanho da letra escolhido no painel (zoom: o texto volta a partir as linhas na largura da coluna);
@@ -271,7 +273,7 @@
       '<label>Pratos degustados <small>— um por linha: Prato | descrição; linha em branco separa momentos; # antes do título do momento</small></label><textarea id="f-pratos" rows="14"></textarea>' +
       '<label>Título da harmonização</label><input id="f-harm">' +
       '<label>Texto da harmonização <small>(opcional, em itálico)</small></label><textarea id="f-intro" rows="3"></textarea>' +
-      '<label>Vinhos <small>— um por linha: Vinho Ano | D.O.</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
+      '<label>Vinhos <small>— um por linha: Vinho Ano | nota (opcional, em itálico como as descrições)</small></label><textarea id="f-vinhos" rows="9" placeholder="Ex.: Quinta do Crasto 2021 | DOC Douro"></textarea>' +
       '<label>Mensagem final</label><textarea id="f-fecho" rows="2"></textarea>' +
       '<div class="bts"><button id="b-print">Imprimir</button><button class="sec" id="b-limpar">Limpar</button></div>';
     CAMPOS.forEach(function(k){
