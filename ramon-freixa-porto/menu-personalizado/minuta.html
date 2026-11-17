@@ -253,6 +253,9 @@
     if (medir(k0 * hi) >= 1) lo = hi;
     else for (var i = 0; i < 12; i++) { var m = (lo + hi) / 2; if (medir(k0 * m) >= 1) lo = m; else hi = m; }
     k = k0 * lo; medir(k);
+    // harmonização (título + vinhos) centrada na altura da página; nunca acima dos 16 mm do menu
+    var hEsq = fd.getBoundingClientRect().height / mmpx;
+    fd.style.top = (Math.max(16, (210 - hEsq) / 2) / k) + 'mm';
     var info = document.getElementById('i-tamanho');
     if (info) info.textContent = Math.round(k0 * 100) + ' %' + (lo < 0.995 ? '  (para caber, sai a ' + Math.round(k * 100) + ' %)' : (lo > 1.005 ? '  (há espaço: sai a ' + Math.round(k * 100) + ' %)' : ''));
   }
