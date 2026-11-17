@@ -139,19 +139,65 @@
       es: { menu:'Descubrimiento entre Dos Mares', pratos:'# Empezamos\nCocido a la portuguesa | Buñuelo cremoso de cocido y flor de ajo.\nHomenaje al Miño | Rosa de trucha marinada con sus huevas y gel de jamón ibérico.\nZanahoria al estilo algarvío | Tartaleta de zanahoria en escabeche, rábano picante y jengibre.\nHuerta y ría | Crujiente de bimi, anguila ahumada a las brasas de roble y velo umami.\nCentolla de Matosinhos | Guiso de centollo con fideos crujientes con Dry White Port y caviar Amur Oscietra.\n\n# La herencia\n| Los panes del padre de Ramón (Josep María Freixa) y su acompañamiento: nuestra pimienta recién molida.\n| Aceite Pôpa do Douro, flor de sal de Castro Marim y mantequilla de Marinhas.\n\n# Menú\nOstra y castaña | Ostra del Atlántico con beurre blanc, castaña y caviar Amur Beluga.\nBosque de Praia de Mira | Flan de trufa melanosporum con setas de temporada, tuétano, piñones y hojas crujientes.\nMar y montaña | Bogavante del Atlántico con dueto de salsas y sus liliáceas.\nBacalao Pinto Duarte | Bacalao confitado a la vainilla con sus callos, judiones y pisto.\nPichón de Cabeção y foie gras | Pichón de la región de Cabeção a los sarmientos con su civet, apio, remolacha y naranja amarga.\n\n# Momento dulce\nQueso Serra da Estrela | Binomio de queso Serra da Estrela, crema de alcachofa y sus hojas, bizcocho tierno de pistacho y endivia asada.\nPâté en croûte | Calabaza y pera rocha del Oeste, chantilly de eneldo y sidra de pera.\nChocolate y madroño | Chocolate Guanabara, corazón de madroño, cítricos y miel de pino.\n\n# Epílogo dulce\nPastel de nata\nPudin de Abade de Priscos\nPâte de fruit de agua de tomate\nPasa de piña y albahaca\nSelección de bombones y chocolates de origen' }
     }
   };
+  // harmonizações para pré-preencher (Word "Harmonização (002)", 17/11/2026)
+  // "| bacalhau" / "| pombo": no Origem, o vinho depende do prato principal escolhido
+  var HARMS = {
+    origem: {
+      base: { nome:{ pt:'Harmonização Origem', en:'Origin Pairing', es:'Armonía Origen' }, vinhos:[
+        'Murganheira Vintage 2015', 'Quinta de Santiago & Mira do Ó Sou Alvarinho 2023', 'Casal dos Aires Vinhas Velhas 2020', 'Cortes de Cima Furnas 2021',
+        'Quinta da Perdonda Branco da Estrela 2020 | bacalhau', 'Giz Vinha das Cavaleiras 2021 | pombo', 'Quinta do Portal Moscatel Reserva 2007' ] },
+      premium: { nome:{ pt:'Harmonização Origem Premium', en:'Origin Premium Pairing', es:'Armonía Origen Premium' }, vinhos:[
+        'Camille Bonville Blanc des Blancs Grand Cru NV', 'Mixtura 2022', 'M2 Campix Palomino Fino 2023', 'Arribas Wine Company Quilómetro 2021',
+        'Lusus Naturae 2021 | bacalhau', 'Monte Cascas Vinha do Quinto 2015 | pombo', 'Niepoort Moscatel 20 Anos' ] }
+    },
+    descoberta: {
+      base: { nome:{ pt:'Harmonização Descoberta', en:'Discovery Pairing', es:'Armonía Descubrimiento' }, vinhos:[
+        'Murganheira Vintage 2015', 'Quinta de Santiago & Mira do Ó Sou Alvarinho 2023', 'Casal dos Aires Vinhas Velhas 2020', 'Cortes de Cima Furnas 2021',
+        'Quinta da Perdonda Branco da Estrela 2020', 'Giz Vinha das Cavaleiras 2021', 'H.M.Borges 15 Anos Verdelho', 'Quinta do Portal Moscatel Reserva 2007' ] },
+      premium: { nome:{ pt:'Harmonização Descoberta Premium', en:'Discovery Premium Pairing', es:'Armonía Descubrimiento Premium' }, vinhos:[
+        'Camille Bonville Blanc des Blancs Grand Cru NV', 'Mixtura 2022', 'M2 Campix Palomino Fino 2023', 'Arribas Wine Company Quilómetro 2021',
+        'Lusus Naturae 2021', 'Monte Cascas Vinha do Quinto 2015', 'D’Oliveiras 15 Anos Verdelho', 'Niepoort Moscatel 20 Anos' ] }
+    }
+  };
+  var PRATO = { pt:{ bacalhau:'Bacalhau', pombo:'Pombo' }, en:{ bacalhau:'Salt cod', pombo:'Pigeon' }, es:{ bacalhau:'Bacalao', pombo:'Pichón' } };
+  // Origem: bacalhau OU pombo; "ambos" deixa os dois pratos (com "ou") e os dois vinhos, cada um com o nome do prato
+  function pratosDe(id, l, escolha){
+    var t = (PRESETS[id][l] || PRESETS[id].pt).pratos;
+    if (!escolha || escolha === 'ambos') return t;
+    var ls = t.split('\n'), i = ls.findIndex(function(x){ return ['ou', 'or', 'o'].indexOf(x.trim().toLowerCase()) >= 0; });
+    if (i < 1) return t;
+    ls.splice(escolha === 'bacalhau' ? i : i - 1, 2);   // tira o "ou" e o prato não escolhido
+    return ls.join('\n');
+  }
+  function vinhosDe(id, nivel, l, escolha){
+    var h = HARMS[id] && HARMS[id][nivel]; if (!h) return null;
+    var vs = [];
+    h.vinhos.forEach(function(v){
+      var p = v.split('|'), w = p[0].trim(), so = (p[1] || '').trim();
+      if (!so) vs.push(w);
+      else if (!escolha || escolha === 'ambos') vs.push(w + ' | ' + PRATO[l][so]);
+      else if (so === escolha) vs.push(w);
+    });
+    return { harm:h.nome[l] || h.nome.pt, vinhos:vs.join('\n') };
+  }
   var VAZIO = { menu:'[Nome do menu]', data:'[Data]', pratos:'[Pratos degustados]', intro:'' };
   var CAMPOS = ['lingua', 'tamanho', 'menu', 'data', 'pratos', 'harm', 'intro', 'vinhos', 'fecho'];
-  var dados = { lingua:'pt', tamanho:'100', menu:'', data:'', pratos:'', harm:TXT.pt.harm, intro:'', vinhos:'', fecho:TXT.pt.fecho };
+  var dados = { lingua:'pt', tamanho:'100', menu:'', data:'', pratos:'', harm:TXT.pt.harm, intro:'', vinhos:'', fecho:TXT.pt.fecho, escolha:'ambos' };
   if (!MODELO) { try { var g = JSON.parse(localStorage.getItem('rfp-minuta') || 'null'); if (g) Object.assign(dados, g); } catch (e) {} }
+  if (dados.harmNivel === undefined) dados.harmNivel = dados.vinhos.trim() ? '' : 'base';   // guardado antes das harmonizações: não apagar vinhos escritos à mão
   // se o menu veio do pré-preenchimento e os pratos não foram mexidos à mão, usar sempre a versão atual dos pratos
-  // (assim uma alteração aos menus neste ficheiro aparece logo, sem ter de voltar a escolher o menu)
+  // (assim uma alteração aos menus neste ficheiro aparece logo, sem ter de voltar a escolher o menu); o mesmo para os vinhos
   if (dados.menu) {   // reconhecer sempre o menu pelo nome (Origem/Descoberta, em qualquer língua)
     Object.keys(PRESETS).forEach(function(id){ ['pt', 'en', 'es'].forEach(function(l){ if (PRESETS[id][l].menu === dados.menu) dados.preset = id; }); });
   }
   if (dados.pratos && dados.pratos.indexOf('|') < 0) dados.pratosEditados = false;   // pratos guardados no formato antigo (sem descrições): atualizar
-  if (dados.preset && !dados.pratosEditados && PRESETS[dados.preset]) {
-    var pa = PRESETS[dados.preset][dados.lingua] || PRESETS[dados.preset].pt; dados.menu = pa.menu; dados.pratos = pa.pratos;
+  function atualizarPreset(){
+    var l = PRESETS[dados.preset][dados.lingua] ? dados.lingua : 'pt';
+    if (!dados.pratosEditados) { dados.menu = PRESETS[dados.preset][l].menu; dados.pratos = pratosDe(dados.preset, l, dados.escolha); }
+    var h = dados.harmNivel && vinhosDe(dados.preset, dados.harmNivel, l, dados.escolha);
+    if (h) { dados.harm = h.harm; dados.vinhos = h.vinhos; }
   }
+  if (dados.preset && PRESETS[dados.preset]) atualizarPreset();
 
   var sh = el('div', 'sheet verso', document.body);
   pos(el('img', 'abs canto', sh), 15.6, 8).src = 'assets/img/rfp-simbolo-charcoal.svg';
@@ -216,6 +262,8 @@
       '<h1>Menu personalizado (minuta)</h1>' +
       '<p class="ajuda">Preencher e carregar em Imprimir. Na impressora: papel A4 da minuta (face em branco para cima), horizontal, escala 100 %, sem margens. Fica guardado neste computador até carregar em Limpar.</p>' +
       '<label>Pré-preencher <small>(substitui o nome e os pratos, na língua escolhida)</small></label><select id="f-preset"><option value="">—</option><option value="origem">Origem entre Dois Mares (menu curto)</option><option value="descoberta">Descoberta entre Dois Mares (menu longo)</option></select>' +
+      '<label>Prato principal <small>(só no Origem: muda o prato e o vinho)</small></label><select id="f-escolha"><option value="ambos">Bacalhau ou Pombo (os dois)</option><option value="bacalhau">Bacalhau</option><option value="pombo">Pombo</option></select>' +
+      '<label>Harmonização <small>(pré-preenche o título e os vinhos)</small></label><select id="f-harmNivel"><option value="base">Origem / Descoberta</option><option value="premium">Premium</option><option value="">Escrever à mão</option></select>' +
       '<label>Língua dos textos fixos</label><select id="f-lingua"><option value="pt">Português</option><option value="en">English</option><option value="es">Español</option></select>' +
       '<label>Tamanho da letra <small id="i-tamanho">100 %</small></label><input id="f-tamanho" type="range" min="70" max="130" step="5">' +
       '<label>Nome do menu</label><input id="f-menu" placeholder="Ex.: Origem entre Dois Mares">' +
@@ -235,23 +283,28 @@
           if (dados.fecho === ant.fecho) { dados.fecho = nov.fecho; document.getElementById('f-fecho').value = nov.fecho; }
         }
         if (k === 'pratos' || k === 'menu') dados.pratosEditados = true;   // mexido à mão: deixa de se atualizar sozinho
+        if (k === 'harm' || k === 'vinhos') { dados.harmNivel = ''; document.getElementById('f-harmNivel').value = ''; }
         dados[k] = f.value;
         try { localStorage.setItem('rfp-minuta', JSON.stringify(dados)); } catch (e) {}
         desenhar();
       });
     });
     if (dados.preset) document.getElementById('f-preset').value = dados.preset;
-    function preencher(){
-      var id = document.getElementById('f-preset').value, p = PRESETS[id];
-      if (!p) return;
-      p = p[document.getElementById('f-lingua').value];
-      ['menu', 'pratos'].forEach(function(k){ dados[k] = p[k]; document.getElementById('f-' + k).value = p[k]; });
-      dados.preset = id; dados.pratosEditados = false;
+    document.getElementById('f-escolha').value = dados.escolha;
+    document.getElementById('f-harmNivel').value = dados.harmNivel;
+    function preencher(manterPratos){   // menu escolhido: nome, pratos, título da harmonização e vinhos, na língua escolhida
+      var id = document.getElementById('f-preset').value;
+      if (!PRESETS[id]) return;
+      dados.preset = id; if (manterPratos !== true) dados.pratosEditados = false;
+      atualizarPreset();
+      ['menu', 'pratos', 'harm', 'vinhos'].forEach(function(k){ document.getElementById('f-' + k).value = dados[k]; });
       try { localStorage.setItem('rfp-minuta', JSON.stringify(dados)); } catch (e) {}
       desenhar();
     }
     document.getElementById('f-preset').addEventListener('change', preencher);
     document.getElementById('f-lingua').addEventListener('change', preencher);   // muda a língua dos pratos se houver um menu escolhido
+    document.getElementById('f-escolha').addEventListener('change', function(e){ dados.escolha = e.target.value; preencher(); });
+    document.getElementById('f-harmNivel').addEventListener('change', function(e){ dados.harmNivel = e.target.value; preencher(true); });
     document.getElementById('b-print').onclick = function(){ window.print(); };
     document.getElementById('b-limpar').onclick = function(){
       if (!confirm('Apagar o menu preenchido?')) return;
