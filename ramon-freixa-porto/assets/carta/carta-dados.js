@@ -57,19 +57,17 @@ NV · NIEPOORT DRY WHITE | 7 | Castas Tradicionais
 2018 · CORTINHA VELHA RESERVA | 71 | Monção e Melgaço · Alvarinho
 2011 · QUINTA DE SAN JOANNE GRANDE RESERVA | 83 | Amarante · Arinto, Avesso
 ## Trás-os-Montes
-2019 · QUINTA DO ARCOSSÓ RESERVA | 60 | Chaves · Chardonnay, Pinot Noir
+2021 · QUINTA DO ARCOSSÓ RESERVA | 60 | Chaves · Chardonnay, Pinot Noir
 ## Douro
 2022 · REAL COMPANHIA VELHA CUVÉE | 66 | Cima Corgo · Pinot Noir, Chardonnay
 2017 · CORTES DE REGUENGO 60 MESES | 86 | Douro Superior · Gouveio
-2013 · VÉRTICE PINOT NOIR | 114 | Cima Corgo · Pinot Noir
-NV · TITAN OF DOURO EXTRA BRUTO ROSÉ | 69 | Cima Corgo · Mourisco
 ## Távora-Varosa
 2016 · MURGANHEIRA VINTAGE | 67 | Tarouca · Pinot Noir
 2011 · HEHN GRAND CUVÉE | 114 | Armamar · Cerceal, Malvasia Fina
 ## Bairrada
 2022 · POÇO DO LOBO BLANC DE NOIRS | 33 | Cantanhede · Baga
 2022 · SIDÓNIO DE SOUSA SPECIAL CUVÉE | 39 | Anadia · Bical, Maria Gomes, Arinto
-QUINTA DOS ABIBES SUBLIME | 164 | Anadia · Arinto
+2015 · QUINTA DOS ABIBES SUBLIME | 164 | Anadia · Arinto
 2022 · LUÍS PATO VINHA PAN | 49 | Anadia · Baga
 2021 · AEQUINOCTIUM HIBERNUS | 96 | Anadia · Arinto, Chardonnay, Bical, Outras
 NV · VÁDIO PERPETUUM | 67 | Anadia · Bical, Cercial, Baga
@@ -92,7 +90,6 @@ NV · FILIPA PATO 3B | 38 | Anadia · Bical, Maria Gomes, Cercial
 2017 · HERDADE DA MALHADINHA ROSÉ | 99 | Beja · Touriga Nacional, Baga, Tinta Miúda
 ## Açores | Azores
 NV · AZORES WINE COMPANY DE PEDRA SE FAZ ESPUMANTE | 232 | Pico · Arinto dos Açores
-2020 · ÍNSULA BRUTO | 165 | Graciosa · Arinto, Verdelho dos Açores
 ## Espanha | Spain
 ### Catalunha · Penedès
 2006 · GRAMONA CELLER BATLLE GRAN RESERVA | 278 | Conca del Riu Anoia · Xarel·lo, Macabeu
@@ -103,7 +100,7 @@ NV · AZORES WINE COMPANY DE PEDRA SE FAZ ESPUMANTE | 232 | Pico · Arinto dos A
 # 03 — Champanhe | Champagne
 ## Non-Vintage
 NV · PIERRE GERBAIS GRAINS DE CELLES | 132 | Côte des Bar · Pinot Noir, Pinot Blanc, Chardonnay
-NV · JACQUESSON CUVÉE 743 DÉGORGEMENT TARDIF | 272 | Avize, Ay · Chardonnay, Pinot Meunier
+NV · JACQUESSON CUVÉE 743 DÉGORGEMENT TARDIF | 281 | Avize, Ay · Chardonnay, Pinot Meunier
 NV · PALMER & CO RÉSERVE | 129 | Reims · Chardonnay, Pinot Noir, Pinot Meunier
 NV · BÉRÈCHE ET FILS BRUT RÉSERVE | 146 | Vallée de la Marne, Reims · Chardonnay, Pinot Noir, Pinot Meunier
 NV · LAURENT-PERRIER GRAND SIÈCLE | 564 | Ambonnay, Verzenay, Mesnil · Chardonnay, Pinot Noir
@@ -156,13 +153,13 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 2022 · PEQUENOS REBENTOS VINHAS VELHAS | 77 | Monção e Melgaço · Loureiro
 2020 · PEQUENOS REBENTOS SELVAGEM | 98 | Monção e Melgaço · Azal
 2022 · ANTÓNIO LOPES RIBEIRO ALR | 33 | Lima · Arinto, Avesso, Loureiro
-2022 · RABIANA OAKED | 66 | Ave · Arinto
+2023 · QUINTA DA RABIANA OAKED | 66 | Ave · Arinto
 2015 · POEMA RESERVA | 70 | Monção e Melgaço · Alvarinho
 2024 · CONEXÃO | 43 | Monção e Melgaço · Alvarinho
 2019 · VILA NOVA RESERVA | 66 | Baião · Avesso
 2017 · QUINTA DA COVELA RESERVA | 61 | Baião · Avesso, Arinto, Chardonnay
 ## Trás-os-Montes
-2019 · QUINTA DO ARCOSSÓ ARINTO | 69 | Chaves · Arinto
+2021 · QUINTA DO ARCOSSÓ ARINTO | 69 | Chaves · Arinto
 2021 · PALÁCIO DOS TÁVORAS VINHAS VELHAS | 88 | Planalto Mirandês · Castas Tradicionais
 2019 · VALLE MADRUGA GRANDE RESERVA | 52 | Valpaços · Gouveio, Viosinho
 2022 · PARAPENTE VINHAS VELHAS | 57 | Valpaços · Códega, Viosinho, Gouveio
@@ -187,7 +184,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 2020 · LEGADO DO ZECA CURTIMENTA | 88 | Baixo Corgo · Castas Tradicionais
 2019 · QUINTA DE CEIS GOIVAENS | 148 | Cima Corgo · Viosinho, Rabigato, Códega do Larinho, Outras
 2021 · CORTES DO TUA SOULMATE | 91 | Douro Superior · Alvarinho
-CORTES DO TUA SOULMATE CURTIMENTA | 181 | Douro Superior · Vinhas Velhas
+2022 · CORTES DO TUA SOULMATE CURTIMENTA | 181 | Douro Superior · Vinhas Velhas
 2024 · NIEPOORT REDOMA RESERVA | 90 | Cima Corgo · Rabigato, Códega do Larinho, Arinto, Outras
 2023 · QUINTA D’AZINHEIRA GRANDE RESERVA | 67 | Baixo Corgo · Vinhas Velhas
 = 17
@@ -208,7 +205,7 @@ CORTES DO TUA SOULMATE CURTIMENTA | 181 | Douro Superior · Vinhas Velhas
 2023 · V PURO DORAVANTE | 52 | Anadia · Arinto, Bical, Cercial
 2022 · SÉRIE ÍMPAR SERCIALINHO | 197 | Anadia · Sercialinho
 2022 · GRANDE BIRRA TRANSMISSION | 154 | Anadia · Cercial, Bical, Maria Gomes, Outras
-2022 · SIDÓNIO DE SOUSA RESERVA | 43 | Anadia · Cercial, Bical, Maria Gomes, Outras
+2023 · SIDÓNIO DE SOUSA RESERVA | 43 | Anadia · Cercial, Bical, Maria Gomes, Outras
 2025 · FILIPA PATO NOSSA CALCÁRIO | 60 | Anadia · Bical
 ## Dão
 2024 · DOMÍNIO DO AÇOR VILA ROMANA | 80 | Terras de Senhorim · Encruzado, Cerceal
@@ -217,7 +214,7 @@ CORTES DO TUA SOULMATE CURTIMENTA | 181 | Douro Superior · Vinhas Velhas
 2024 · TEXTURA DA ESTRELA | 46 | Serra da Estrela · Encruzado, Cerceal, Bical
 = 18
 ## Dão
-MARCADO A FERROS | 65 | Castas Tradicionais
+2019 · MARCADO A FERROS | 65 | Castas Tradicionais
 2022 · QUINTA DAS MARIAS EX-CRUDUS | 131 | Castendo · Encruzado
 2024 · QUINTA DA PELLADA PRIMUS | 100 | Serra da Estrela · Encruzado
 2022 · DONA SANCHA CERCEAL | 91 | Silgueiros · Cerceal
@@ -238,7 +235,7 @@ MARCADO A FERROS | 65 | Castas Tradicionais
 2022 · MONTE BLUNA RESERVA | 65 | Arruda · Arinto, Vital
 = 19
 ## Lisboa
-2022 · CHOCAPALHA CH | 72 | Alenquer · Arinto
+2022 · CHOCAPALHA CH | 68 | Alenquer · Arinto
 2025 · RAMILO GALEGO DOURADO | 85 | Colares · Galego Dourado
 2022 · RAMILO MALVASIA | 157 | Colares · Malvasia de Colares
 2023 · BAÍAS ENSEADAS PESSOAL | 90 | Colares · Fernão Pires
@@ -255,12 +252,11 @@ MARCADO A FERROS | 65 | Castas Tradicionais
 2023 · ODE ENÓLOGA | 108 | Cartaxo · Arinto, Fernão Pires
 ## Península de Setúbal
 2021 · QUINTA DO PILOTO COLEÇÃO DE FAMÍLIA | 79 | Palmela · Antão Vaz, Arinto
-= 20
-## Península de Setúbal
 2022 · HERDADE DO PERÚ PRIVATE COLECÇÃO | 109 | Setúbal · Arinto
 2023 · HERDADE DO CEBOLAL VINHA DO ROSSIO | 65 | Setúbal · Boal
-JMF LAGOALVA GRANDE RESERVA | 78 | Setúbal · Fernão Pires
+2022 · JMF LAGOALVA GRANDE RESERVA | 78 | Setúbal · Fernão Pires
 2022 · HERDADE DO PORTOCARRO GERÓNIMO | 77 | Setúbal · Sercial, Galego Dourado
+= 20
 ## Alentejo
 2023 · XXVI TALHAS MESTRE DANIEL | 52 | Vidigueira · Perrum, Antão Vaz, Roupeiro
 2021 · PONTE DO MOUCHÃO | 58 | Estremoz · Verdelho
@@ -268,7 +264,7 @@ JMF LAGOALVA GRANDE RESERVA | 78 | Setúbal · Fernão Pires
 2022 · MAQUETE BARRO | 62 | Granja-Amareleja · Diagalves, Monteúdo, Antão Vaz, Outras
 2022 · FITA PRETA CHÃO DOS EREMITAS | 66 | Évora · Alicante Branco
 2022 · FITA PRETA CHÃO DOS EREMITAS OS PAULISTAS | 128 | Évora · Alicante Branco, Rabo de Ovelha, Trincadeira das Pratas
-2025 · TORRE DE PALMA | 71 | Portalegre · Arinto, Alvarinho
+2025 · TORRE DE PALMA | 72 | Portalegre · Arinto, Alvarinho
 2011 · CABEÇAS DE REGUENGO EQUINÓCIO | 66 | Portalegre · Monteúdo, Tamarez, Alicante Ganzin, Outras
 2021 · PAÇO DOS INFANTES GARRAFEIRA | 97 | Vidigueira · Arinto, Alvarinho
 2023 · HERDADE DO SOBROSO ARCHÉ | 165 | Vidigueira · Arinto, Antão Vaz
@@ -278,7 +274,6 @@ JMF LAGOALVA GRANDE RESERVA | 78 | Setúbal · Fernão Pires
 2023 · ÍNSULA ARINTO DOS AÇORES | 84 | Pico · Arinto dos Açores
 2024 · AZORES WINE COMPANY VERDELHO ORIGINAL | 64 | Pico · Verdelho dos Açores
 2023 · AZORES WINE COMPANY VINHA DOS UTRAS | 509 | Pico · Arinto dos Açores, Outras
-NV · AZORES WINE COMPANY 3 COLHEITAS | 104 | Pico · Arinto dos Açores
 2023 · ADEGA DO VULCÃO AMEIXÂMBAR | 75 | Faial, Pico · Arinto, Verdelho, Terrantez dos Açores
 = 21
 ## Açores | Azores
@@ -291,14 +286,14 @@ NV · AZORES WINE COMPANY 3 COLHEITAS | 104 | Pico · Arinto dos Açores
 2025 · PROFETAS E VILÕES CROSTA CALCÁRIA | 286 | Listrão, Caracol
 ## Portugal e Espanha | Portugal and Spain
 ### Vinho Verde · Rías Baixas
-2021 · MIXTURA | 62 | Trajadura, Alvarinho/Albariño
+2021 · MIXTURA | 96 | Trajadura, Alvarinho/Albariño
 ## Espanha | Spain
 ### Galiza · Rías Baixas
 2022 · MARQUÉS DE MURRIETA PAZO DE BARRANTES | 109 | Albariño
 2021 · ZARATE BALADO | 127 | Albariño
 2025 · FORJAS DEL SALNÉS LEIRANA | 42 | Albariño
 ### Galiza · Valdeorras
-2024 · RAFAEL PALACIOS LOURO | 52 | Godello
+2024 · RAFAEL PALACIOS LOURO | 67 | Godello
 2021 · RAFAEL PALACIOS SORTE ANTIGA | 508 | Godello
 ### Castilla y León · Rueda
 2023 · OSSIAN | 115 | Verdejo
@@ -342,7 +337,6 @@ NV · AZORES WINE COMPANY 3 COLHEITAS | 104 | Pico · Arinto dos Açores
 2022 · DOMAINE BOHRMANN PULIGNY-MONTRACHET LES GRANDS CHAMPS | 180 | Côte de Beaune · Chardonnay
 2022 · DOMAINE SÉBASTIEN MAGNIEN MEURSAULT LES CHAVAUX | 191 | Côte de Beaune · Chardonnay
 2023 · DOMAINE FAIVELEY BÂTARD-MONTRACHET GRAND CRU | 1223 | Côte de Beaune · Chardonnay
-2024 · LA PIERRE RONDE BOURGOGNE VIEILLES VIGNES | 122 | Côte de Beaune · Aligoté
 2024 · DOMAINE SIMON COLIN CHASSAGNE-MONTRACHET 1ER CRU LES CHAUMES | 277 | Côte de Beaune · Chardonnay
 2023 · DE MONTILLE CORTON-CHARLEMAGNE GRAND CRU | 642 | Côte de Beaune · Chardonnay
 2018 · VINCENT GIRARDIN CHASSAGNE-MONTRACHET VIEILLES VIGNES | 232 | Côte de Beaune · Chardonnay
@@ -432,7 +426,7 @@ NV · FITA PRETA CUVÉE Nº10 | 40 | Évora · Castelão, Trincadeira, Aragonez
 2017 · CASA FERREIRINHA RESERVA ESPECIAL | 586 | Douro Superior · Vinhas Velhas
 2019 · QUINTA DO NOVAL VINHAS DA MARKA | 461 | Cima Corgo · Vinhas Velhas
 2014 · QUANTA TERRA INTEIRO | 175 | Cima Corgo · Touriga Nacional, Touriga Franca
-2020 · QUINTA DO CARVALHIDO | 66 | Douro Superior · Touriga Nacional, Touriga Franca
+2020 · QUINTA DO CARVALHIDO | 68 | Douro Superior · Touriga Nacional, Touriga Franca
 2023 · CONEXÃO O SEGREDO | 57 | Baixo Corgo · Tinta Francisca, Tinta Amarela
 2022 · QUINTA DO MONTE XISTO ORIENTE | 185 | Douro Superior · Tinto Cão, Tinta Francisca
 2018 · NIEPOORT QUINTA DE NÁPOLES | 154 | Cima Corgo · Sousão, Tinta Amarela, Tinta Francisca, Outras
@@ -470,7 +464,7 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2014 · PRINCIPAL GRANDE RESERVA | 285 | Anadia · Cabernet Sauvignon, Touriga Nacional, Outras
 = 32
 ## Bairrada
-2021 · PRIOR LUCAS DOMINICAL’S | 69 | Vinhas Velhas
+2021 · PRIOR LUCAS DOMINICAL’S | 69 | Anadia · Vinhas Velhas
 2020 · V PURO OUTRORA CLÁSSICO | 97 | Anadia · Baga
 1995 · FREI JOÃO | 108 | Anadia · Baga, Touriga Nacional, Tinta Roriz, Merlot, Syrah
 ## Dão
@@ -478,21 +472,21 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2018 · QUINTA DO ESCUDIAL TOURIGA NACIONAL | 58 | Serra da Estrela · Touriga Nacional
 2014 · MONTE CASCAS VINHA DA CARPANHA | 117 | Silgueiros · Touriga Nacional, Jaen
 2016 · M.O.B. GARRAFEIRA | 88 | Serra da Estrela · Vinhas Velhas
-MARCADO A FERROS | 68 | Alva · Touriga Nacional, Alfrocheiro, Outras
+2018 · MARCADO A FERROS | 68 | Alva · Touriga Nacional, Alfrocheiro, Outras
 2022 · QUINTA DE SAES ESTÁGIO PROLONGADO | 43 | Serra da Estrela · Touriga Nacional, Tinta Roriz, Outras
 2019 · QUINTA DA PELLADA ALTO | 142 | Serra da Estrela · Jaen, Tinta Pinheira, Tinta Carvalha, Bastardo
 2018 · CASA DA PASSARELLA VILLA OLIVEIRA VINHA CENTENÁRIA PAI D’AVIZ | 144 | Serra da Estrela · Baga, Jaen, Tinta Pinheira, Touriga Nacional, Outras
 2014 · CASA DA PASSARELLA VILLA OLIVEIRA VINDIMA | 506 | Serra da Estrela · Baga, Touriga Nacional, Alvarelhão, Outras
 2022 · ANTÓNIO MADEIRA CENTENÁRIA | 152 | Serra da Estrela · Jaen, Outras
-2022 · PRIMADO SB | 48 | Tinta Roriz
+2022 · PRIMADO SB | 48 | Silgueiros · Tinta Roriz
 2015 · PRIMADO | 87 | Silgueiros · Touriga Nacional, Alfrocheiro, Tinta Roriz, Outras
 2021 · RIBEIRO SANTO VINHA DA NEVE | 85 | Terras de Senhorim · Touriga Nacional, Alfrocheiro, Tinto Cão
 2022 · LIQUEN ALFROCHEIRO | 114 | Silgueiros · Alfrocheiro
-1980 · PORTA DOS CAVALEIROS | 187 | Besteiros · Touriga Nacional, Tinta Roriz, Alfrocheiro, Jaen
+1985 · PORTA DOS CAVALEIROS | 187 | Besteiros · Touriga Nacional, Tinta Roriz, Alfrocheiro, Jaen
 ## Beira Interior
 2021 · BEYRA VINHA DE SANTA MARIA | 81 | Castelo Rodrigo · Tinta Roriz
 2022 · MARTIN BOUTIQUE WINES 70/30 | 59 | Cova da Beira, Pinhel · Touriga Nacional, Syrah, Rufete
-2023 · CASAS ALTAS | 36 | Cova da Beira · Rufete
+2023 · CASAS ALTAS | 40 | Cova da Beira · Rufete
 = 33
 ## Lisboa
 2021 · ADEGAMÃE ATLÂNTICO | 66 | Torres Vedras · Pinot Noir
@@ -513,14 +507,12 @@ MARCADO A FERROS | 68 | Alva · Touriga Nacional, Alfrocheiro, Outras
 2021 · PINHAL DA TORRE ANTAGONISTA | 123 | Lezíria do Tejo · Touriga Nacional, Grenache
 ## Península de Setúbal
 2011 · CEBOLAL CAIOS | 112 | Setúbal · Alicante Bouschet, Aragonez
-2018 · TROIS | 120 | Palmela · Castelão
-= 34
-## Península de Setúbal
 2022 · HORÁCIO SIMÕES RESERVA | 38 | Setúbal · Castelão, Outras
 2018 · HERDADE DO PORTOCARRO CAVALO MALUCO | 87 | Setúbal · Petit Verdot, Touriga Franca, Touriga Nacional
-QUINTA DO PILOTO COLEÇÃO DE FAMÍLIA | 86 | Setúbal · Castelão
+2021 · QUINTA DO PILOTO COLEÇÃO DE FAMÍLIA | 86 | Setúbal · Castelão
+= 34
 ## Alentejo
-XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Grossa
+2022 · XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Grossa
 2021 · MAQUETE BARRO | 51 | Granja-Amareleja · Alicante Bouschet, Moreto, Touriga Nacional
 2020 · MARQUÊS DE BORBA V DO LADO CAIADA | 74 | Borba · Tinta Caiada
 2021 · CORTES DE CIMA SALINO | 102 | Vidigueira · Cabernet Franc
@@ -538,10 +530,9 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2023 · SUSANA ESTEBAN CENTENÁRIA | 78 | Portalegre · Vinhas Velhas
 ## Algarve
 2025 · ARVAD NEGRAMOLE | 42 | Lagoa · Negramole
-= 35
-## Algarve
 2021 · MORGADO DO QUINTÃO | 96 | Lagoa · Castelão
 2022 · JOÃO CLARA RESERVA | 63 | Lagos · Alicante Bouschet, Touriga Nacional, Syrah
+= 35
 ## Açores
 2024 · ADEGA DO VULCÃO CLARETE | 52 | Pico · Merlot, Syrah
 ## Madeira
@@ -557,7 +548,6 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2022 · RETA TA/RAZ | 117 | Rufete, Calabrês, Aragonez, Outras Brancas
 ### Castilla y León · Ribera del Duero
 2019 · FLOR DE PINGUS | 407 | Tempranillo
-2020 · PAGO DE CARRAOVEJAS CUESTA DE LAS LIEBRES | 984 | Tinto Fino
 2022 · VEGA SICILIA ALIÓN | 227 | Tempranillo
 2021 · VEGA SICILIA VALBUENA 5º | 366 | Tempranillo, Merlot
 = 36
@@ -624,7 +614,7 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 2016 · CHÂTEAU HAUT-BRION 1ER CRU CLASSÉ | 1490 | Pessac-Léognan · Merlot, Cabernet Sauvignon, Cabernet Franc
 2019 · CHÂTEAU CHEVAL BLANC 1ER GRAND CRU CLASSÉ | 2255 | Saint-Émilion · Merlot, Cabernet Franc
 2020 · CHÂTEAU PETIT FIGEAC | 223 | Saint-Émilion · Cabernet Sauvignon, Cabernet Franc, Merlot
-2022 · LE PUY ÉMILIEN | 92 | Côtes de Bordeaux · Merlot, Cabernet Franc
+2022 · LE PUY ÉMILIEN | 102 | Côtes de Bordeaux · Merlot, Cabernet Franc
 2020 · STÉPHANE DERENONCOURT DOMAINE DE L’A | 113 | Côtes de Bordeaux · Merlot, Cabernet Franc
 2021 · CHÂTEAU LAFLEUR LES PERRIÈRES | 200 | Pomerol · Merlot, Bouchet
 2015 · CHÂTEAU FLEUR CARDINALE | 149 | Saint-Émilion · Merlot, Cabernet Sauvignon, Cabernet Franc
@@ -655,13 +645,13 @@ XXVI TALHAS MESTRE DANIEL | 46 | Vidigueira · Trincadeira, Aragonez, Tinta Gros
 ## Trás-os-Montes
 2022 · QUINTA DO ARCOSSÓ 50 cl | 63 | Chaves · Sémillon
 ## Douro
-ANETO S 50 cl | 155 | Baixo Corgo · Sémillon
+2019 · ANETO S 50 cl | 155 | Baixo Corgo · Sémillon
 ## Lisboa
 2020 · CASAL STA MARIA 37,5 cl | 120 | Colares · Petit Manseng
 ## Tejo
 2018 · CASAL BRANCO FALCOARIA 37,5 cl | 82 | Lezíria do Tejo · Fernão Pires
 ## Alentejo
-HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
+2023 · HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
 ## França | France
 ### Bordéus | Bordeaux
 2020 · CHÂTEAU DOISY-VÉDRINES 2ÈME CRU CLASSÉ | 137 | Barsac · Sémillon, Sauvignon Blanc, Sauvignon Gris
@@ -683,7 +673,7 @@ HERDADE DA MALHADINHA 37,5 cl | 84 | Beja · Petit Manseng
 20 YO · QUINTA DA GAIVOSA 50 cl | 134
 20 YO · KOPKE 37,5 cl | 102
 20 YO · DALVA DRY | 125
-20 YO · RAMOS PINTO | 206
+20 YO · RAMOS PINTO | 230
 30 YO · KOPKE 37,5 cl | 187
 40 YO · ANDRESEN 50 cl | 319
 50 YO · DALVA VERY OLD | 612
@@ -758,9 +748,7 @@ NV · HORÁCIO SIMÕES EXCELLENT 50 cl | 125 | Setúbal · Moscatel de Alexandri
 10 YO · JUSTINO’S MALVASIA | 103
 15 YO · H.M. BORGES VERDELHO | 121
 15 YO · D’OLIVEIRAS BOAL | 142
-20 YO · BARBEITO BASTARDO 2 | 403
 30 YO · BLANDY’S BOAL | 397
-30 YO · BARBEITO DUETO 50 cl | 355
 40 YO · BARBEITO VINHO DO REITOR LOTE 2 MALVASIA | 681
 50+ YO · H.M. BORGES MALVASIA | 1019
 2014–2017 · BARBEITO LOTE ESPECIAL SERCIAL E VERDELHO 50 cl | 184
