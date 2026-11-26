@@ -28,7 +28,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 27 | Côte des Blancs, Avize · Pinot N
 2019 · DUAS ÁRVORES RESERVA | 17 | Douro · Vinhas Velhas
 2016 · QUINTA DO ESCUDIAL | 11 | Dão · Touriga Nacional
 2018 · MESSIAS CLÁSSICO | 15 | Bairrada · Baga
-2022 · GERAÇÕES DE TALHA FARRABO | 13 | Alentejo · Aragonez, Trincadeira, Outras
+2022 · GERAÇÕES DE TALHA FARRAPO | 13 | Alentejo · Aragonez, Trincadeira, Outras
 = 7
 ## Colheita Tardia | Late Harvest 6 cl
 2022 · QUINTA DO ARCOSSÓ | 11 | Trás-os-Montes · Sémillon
@@ -519,7 +519,7 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2021 · MAQUETE BARRO | 51 | Granja-Amareleja · Alicante Bouschet, Moreto, Touriga Nacional
 2020 · MARQUÊS DE BORBA VINHA DO LADO | 74 | Borba · Tinta Caiada
 2021 · CORTES DE CIMA SALINO | 102 | Vidigueira · Cabernet Franc
-2022 · GERAÇÕES DE TALHA FARRABO | 58 | Vidigueira · Alfrocheiro, Trincadeira, Alicante Bouschet
+2022 · GERAÇÕES DE TALHA FARRAPO | 58 | Vidigueira · Alfrocheiro, Trincadeira, Alicante Bouschet
 2020 · ALTAS QUINTAS RESERVA-DO | 139 | Portalegre · Alicante Bouschet, Syrah, Touriga Nacional
 2023 · HERDADE DA MALHADINHA MATEUS MARIA | 182 | Beja · Alicante Bouschet, Tinta Miúda, Baga
 2022 · ADEGA DO MONTE BRANCO ALENTO RESERVA | 41 | Estremoz · Aragonez, Alicante Bouschet, Touriga Nacional
