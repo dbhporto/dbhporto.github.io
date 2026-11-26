@@ -32,7 +32,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 27 | Côte des Blancs, Avize · Pinot N
 = 7
 ## Colheita Tardia | Late Harvest 6 cl
 2022 · QUINTA DO ARCOSSÓ | 11 | Trás-os-Montes · Sémillon
-2014 · DISZNÓKŐ TOKAJI 5 PUTTONYOS | 19 | Tokaj · Furmint, Hárslevelű
+2014 · DISZNÓKŐ TOKAJI ASZÚ 5 PUTTONYOS | 19 | Tokaj · Furmint, Hárslevelű
 ## Vinho do Porto Branco | White Port 6 cl
 NV · NIEPOORT DRY WHITE | 7 | Castas Tradicionais
 20 YO · QUINTA DA GAIVOSA | 19 | Castas Tradicionais
@@ -50,7 +50,7 @@ NV · NIEPOORT DRY WHITE | 7 | Castas Tradicionais
 ## Vinho da Madeira | Madeira Wine 6 cl
 15 YO · H.M. BORGES MEIO SECO | 13 | Verdelho
 10 YO · BARBEITO MEIO DOCE | 12 | Boal
-2000 · JUSTINO’S SINGLECASK MEIO DOCE | 30 | Tinta Negra
+2000 · JUSTINO’S SINGLE CASK MEIO DOCE | 30 | Tinta Negra
 = 9
 # 02 — Espumantes | Sparkling Wine
 ## Vinho Verde
@@ -107,7 +107,7 @@ NV · BÉRÈCHE ET FILS BRUT RÉSERVE | 146 | Vallée de la Marne, Reims · Char
 NV · LAURENT-PERRIER GRAND SIÈCLE | 564 | Ambonnay, Verzenay, Mesnil · Chardonnay, Pinot Noir
 NV · LOUIS ROEDERER COLLECTION 246 | 107 | Vallée de la Marne · Chardonnay, Pinot Meunier, Pinot Noir
 90-21 · HENRI GIRAUD PERPETUAL | 328 | Ay · Pinot Noir, Chardonnay
-NV · LOMBARD LE MESNIL-SUR-OGER GRAND CRU | 229 | Epernay · Chardonnay
+NV · LOMBARD LE MESNIL-SUR-OGER GRAND CRU | 229 | Épernay · Chardonnay
 NV · DELAMOTTE BLANC DES BLANCS GRAND CRU | 167 | Côte des Blancs · Chardonnay
 NV · H. BLIN PETIT MESLIER | 167 | Vallée de la Marne · Petit Meslier
 NV · ERIC RODEZ BLANC DE NOIRS | 191 | Ambonnay · Pinot Noir
@@ -262,7 +262,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 ## Alentejo
 2023 · XXVI TALHAS MESTRE DANIEL | 52 | Vidigueira · Perrum, Antão Vaz, Roupeiro
 2024 · PONTE DO MOUCHÃO | 58 | Estremoz · Verdelho
-2024 · ADEGA MONTE BRANCO VINHAS NOVAS | 39 | Estremoz · Rabigato, Arinto, Galego Dourado
+2024 · ADEGA DO MONTE BRANCO VINHAS NOVAS | 39 | Estremoz · Rabigato, Arinto, Galego Dourado
 2022 · MAQUETE BARRO | 62 | Granja-Amareleja · Diagalves, Monteúdo, Antão Vaz, Outras
 2022 · FITA PRETA CHÃO DOS EREMITAS | 66 | Évora · Alicante Branco
 2022 · FITA PRETA CHÃO DOS EREMITAS OS PAULISTAS | 128 | Évora · Alicante Branco, Rabo de Ovelha, Trincadeira das Pratas
@@ -333,7 +333,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 2023 · DOMAINE LAVANTUREUX GRAND CRU VAUDÉSIR | 226 | Chardonnay
 2019 · DOMAINE JEAN-PIERRE GROSSOT 1ER CRU TROESMES | 112 | Chardonnay
 2023 · DOMAINE FRANÇOIS RAVENEAU CHABLIS | 261 | Chardonnay
-2021 · DOMAINE BILLAUD-SIMON CHABLIS TÊTE D’OR | 93
+2021 · DOMAINE BILLAUD-SIMON CHABLIS TÊTE D’OR | 93 | Chardonnay
 2022 · DOMAINE BILLAUD-SIMON 1ER CRU FOURCHAUME | 138 | Chardonnay
 ### Borgonha | Burgundy · Côte-d’Or
 2022 · DOMAINE BOHRMANN PULIGNY-MONTRACHET LES GRANDS CHAMPS | 180 | Côte de Beaune · Chardonnay
@@ -351,7 +351,7 @@ NV · CAMILLE BONVILLE GRAND CRU ROSÉ | 149 | Côte des Blancs, Avize · Pinot 
 2022 · VINCENT CHÂTEAU-FUISSÉ LES CLOS MONOPOLE | 196 | Pouilly-Fuissé · Chardonnay
 ### Bordéus | Bordeaux
 2018 · CHÂTEAU SMITH HAUT LAFITTE | 335 | Pessac-Léognan · Sémillon, Sauvignon Blanc
-2023 · CHÂTEAU LA FLEUR LES CHAMPS LIBRES | 176 | Bordeaux · Sauvignon Blanc, Sémillon
+2023 · CHÂTEAU LAFLEUR LES CHAMPS LIBRES | 176 | Bordeaux · Sauvignon Blanc, Sémillon
 ### Vale do Ródano | Vallée du Rhône
 2022 · MICHEL CHAPOUTIER CONDRIEU INVITARE | 120 | Norte · Viognier
 2019 · DOMAINE JEAN-LOUIS CHAVE SÉLECTION HERMITAGE BLANC | 146 | Norte · Marsanne, Roussanne
@@ -536,16 +536,16 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2021 · MORGADO DO QUINTÃO | 96 | Lagoa · Castelão
 2022 · JOÃO CLARA RESERVA | 63 | Lagos · Alicante Bouschet, Touriga Nacional, Syrah
 = 35
-## Açores
+## Açores | Azores
 2024 · ADEGA DO VULCÃO CLARETE | 52 | Pico · Merlot, Syrah
 ## Madeira
 2025 · PROFETAS E VILÕES TINTA NEGRA | 59 | Tinta Negra
 2023 · BARBEITO VINHAS DO FARROBO | 145 | Bastardo
 ## Espanha | Spain
 ### Galiza · Ribera Sacra
-2021 · ABADIA DA COVA PENAFION | 76 | Mencia
+2021 · ABADIA DA COVA PENAFION | 76 | Mencía
 ### Castilla y León · Bierzo
-2020 · RAÚL PÉREZ ULTREIA RAPOLÃO | 157 | Mencia
+2020 · RAÚL PÉREZ ULTREIA RAPOLÃO | 157 | Mencía
 2021 · MAURO VALEYO | 107 | Mencía, Godello
 ### Castilla y León
 2022 · RETA TA/RAZ | 117 | Rufete, Calabrês, Aragonez, Outras Brancas
@@ -564,7 +564,7 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2021 · VEGA SICILIA PINTIA | 181 | Tinta de Toro
 2021 · SAN ROMÁN | 105 | Tinta de Toro
 ### Laguardia
-2024 · ARTADI SAN LAZARO | 315 | Tempranillo
+2024 · ARTADI SAN LÁZARO | 315 | Tempranillo
 ### Rioja
 2009 · VIÑA BOSCONIA RESERVA | 121 | Rioja Alta · Garnacha, Graciano, Mazuelo, Tempranillo
 2010 · VIÑA TONDONIA | 155 | Rioja Alta · Garnacha, Graciano, Tempranillo
@@ -660,7 +660,7 @@ NV · QUINTA DA CAROLINA CORTEX | 126 | Cima Corgo · Touriga Nacional, Tinta Ro
 2015 · CHÂTEAU D’YQUEM 1ER CRU SUPÉRIEUR | 1298 | Sauternes · Sauvignon Blanc, Sémillon
 ## Alemanha | Germany
 ### Mosel
-2010 · MARKUS MOLITOR WEHLENER SONNENUHR TBA 37,5 cl | 387 | Saar · Riesling
+2010 · MARKUS MOLITOR WEHLENER SONNENUHR TBA 37,5 cl | 387 | Riesling
 = 42
 ## Hungria | Hungary
 ### Tokaj
